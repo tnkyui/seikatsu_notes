@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   get 'lists/index'
   get 'lists/create'
   get 'lists/update'
