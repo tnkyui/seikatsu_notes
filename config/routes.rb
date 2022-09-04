@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'lists/index'
+  get 'lists/create'
+  get 'lists/update'
+  get 'lists/destroy'
   get 'stocks/index'
   get 'stocks/show'
   get 'stocks/create'
