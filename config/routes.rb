@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  get 'stocks/index'
+  get 'stocks/show'
+  get 'stocks/create'
+  get 'stocks/update'
+  get 'stocks/destroy'
   get 'users/edit'
   get 'users/update'
   get 'users/destroy'
