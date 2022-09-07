@@ -5,6 +5,8 @@ class StocksController < ApplicationController
   end
 
   def show
+    @stock = Stock.find(params[:id])
+    @category = Category.new
   end
 
   def create
@@ -14,6 +16,9 @@ class StocksController < ApplicationController
   end
 
   def update
+    stock = Stock.find(params[:id])
+    stock.update(stock_params)
+    redirect_to stocks_path
   end
 
   def destroy

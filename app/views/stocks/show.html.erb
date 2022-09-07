@@ -1,2 +1,45 @@
-<h1>Stocks#show</h1>
-<p>Find me in app/views/stocks/show.html.erb</p>
+<div class="container">
+<%= render 'layouts/navbar' %>
+  <div class="row">
+    <div class="col-4 border_sketch">
+      <h4 class="headline">在庫更新</h4>
+      <div class="form-group p-3">
+        <%= form_with model: @stock do |f| %>
+          <%= @stock.name %>
+          <%= f.number_field :percentage, :max= {100}, class: "form-control" %>
+          <%= f.number_field :stock_amount, class: "form-control" %>
+          <p class="border_sketch">
+            notes<br>
+            残量は0~100%で設定します。<br>
+            ストックは未開封で保存している数を設定します。<br>
+          </p>
+          <%= f.date_field :purchase_date, class: "form-control" %>
+
+          <%= f.submit "更新", class: "btn btn-success btn-block" %>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-8 border_sketch">
+      <h4 class="headline">在庫編集</h4>
+        <%= form_with model: @stock do |f| %>
+          <%= f.text_field :name, placeholder: "商品名", class: "form-control" %>
+
+          <!--以下はcategory設定後-->
+          <%#= f.select :category_id, options_from_collection_for_select (Category.all, :id, :), class: "form-control" %>
+            <%#= form_with model: @category do |f| %>
+              <%#= f.text_field :name, placeholder: "カテゴリー名", class: "form-control form-sm" %>
+              <%#= f.submit "追加", class: "btn btn-sm btn-success" %>
+            <%# end %>
+
+          <!--以下はenum設定後-->
+          <!--<label>アラート設定</label>-->
+          <%#= f.radio_button :alert_date,, class: "form-control"  %>
+          <%#= f.radio_button :alert_date,, class: "form-control"  %>
+          <%#= f.radio_button :alert_date,, class: "form-control"  %>
+          <%#= f.radio_button :alert_date,, class: "form-control"  %>
+          <%= f.submit "修正", class: "btn btn-success btn-block" %>
+        <% end %>
+
+    </div>
+  </div>
+</div>

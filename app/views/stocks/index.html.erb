@@ -6,6 +6,7 @@
       <div class="form-group p-3">
         <%= form_with model: @stock do |f| %>
           <%= f.text_field :name, placeholder: "商品名", class: "form-control" %>
+          <%= hidden_field :percentage, :value => 100 %>
           <%= f.number_field :stock_amount, class: "form-control", value: 1 %>
           <%= f.date_field :purchase_date, class: "form-control", value: Date.current.strftime("%Y-%m-%d") %>
           <!--以下はcategory設定後-->
