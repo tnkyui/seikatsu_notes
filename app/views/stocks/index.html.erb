@@ -1,12 +1,30 @@
 <div class="container">
+<%= render 'layouts/navbar' %>
   <div class="row">
-
-  </div>
-  <div class="row">
-    <div class="col-4">
-
+    <div class="col-4 border_sketch">
+      <h4 class="headline">在庫登録</h4>
+      <div class="form-group p-3">
+        <%= form_with model: @stock do |f| %>
+          <%= f.text_field :name, placeholder: "商品名", class: "form-control" %>
+          <%= f.number_field :stock_amount, class: "form-control", value: 1 %>
+          <%= f.date_field :purchase_date, class: "form-control", value: Date.current.strftime("%Y-%m-%d") %>
+          <!--以下はcategory設定後-->
+          <%#= f.select :category_id, options_from_collection_for_select (Category.all, :id, :), class: "form-control" %>
+            <%#= form_with model: @category do |f| %>
+              <%#= f.text_field :name, placeholder: "カテゴリー名", class: "form-control form-sm" %>
+              <%#= f.submit "追加", class: "btn btn-sm btn-success" %>
+            <%# end %>
+          <!--以下はenum設定後-->
+          <!--<label>アラート設定</label>-->
+          <%#= f.radio_button :alert_date,, class: "form-control"  %>
+          <%#= f.radio_button :alert_date,, class: "form-control"  %>
+          <%#= f.radio_button :alert_date,, class: "form-control"  %>
+          <%#= f.radio_button :alert_date,, class: "form-control"  %>
+          <%= f.submit "登録", class: "btn btn-primary btn-block" %>
+        <% end %>
+      </div>
     </div>
-    <div class="col-8">
+    <div class="col-8 border_sketch">
 
     </div>
   </div>

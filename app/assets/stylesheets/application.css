@@ -13,3 +13,24 @@
  *= require_tree .
  *= require_self
  */
+
+.border_sketch{
+  border:solid 2px #41403E;
+  border-top-left-radius: 255px 15px;
+  border-top-right-radius: 15px 225px;
+  border-bottom-right-radius: 225px 15px;
+  border-bottom-left-radius: 15px 255px;
+}
+
+.navbar-button{
+  font-family: 'Architects Daughter';
+  margin: 5px;
+}
+
+.headline {
+  margin-top: 30px;
+  padding-left: 10px;
+  border-bottom: 2px solid #41403E;
+  border-bottom-right-radius: 225px 15px;
+  border-bottom-left-radius: 15px 255px;
+}
