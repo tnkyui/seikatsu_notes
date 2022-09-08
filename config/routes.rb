@@ -9,7 +9,9 @@ Rails.application.routes.draw do
   delete 'users/destroy' => 'users#destroy'
 
   resources :stocks, only:[:index, :show, :create, :update, :destroy]
-  resources :lists,  only:[:index, :create, :update, :destroy]
+  resources :lists,  only:[:index]
+  resources :shopping_lists, only:[:create, :update, :destroy]
+  resources :todo_lists, only:[:create, :update, :destroy]
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
