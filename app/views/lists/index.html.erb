@@ -19,6 +19,15 @@
       </div>
     </div>
     <div class="col-8 border_sketch">
+      <div class="shopping_list">
+        <h4 class="headline">買うものリスト</h4>
+        <% @shopping_lists.each do |shopping_list| %>
+          <%= shopping_list.name %>
+        <% end %>
+      </div>
+
+
+
 
     </div>
   </div>

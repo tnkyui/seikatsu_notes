@@ -1,8 +1,9 @@
 class TodoListsController < ApplicationController
 
   def create
-    todo_list = TodoList.new(todo_list_params)
-    todo_list.save
+    @todo_list = TodoList.new(todo_list_params)
+    @todo_list.user_id = current_user.id
+    @todo_list.save
     redirect_to lists_path
   end
 

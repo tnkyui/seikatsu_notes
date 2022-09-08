@@ -13,6 +13,11 @@
 
   <body>
     <header>
+      <div class="text-center">
+        <%= link_to "LogIn", new_user_session_path %>
+        <%= link_to "LogOut", destroy_user_session_path, method: :destroy %>
+      </div>
+
 
     </header>
     <main>
