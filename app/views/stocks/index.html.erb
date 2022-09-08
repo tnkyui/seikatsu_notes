@@ -4,17 +4,19 @@
     <div class="col-4 border_sketch">
       <h4 class="headline">在庫登録</h4>
       <div class="form-group p-3">
-        <%= form_with model: @stock do |f| %>
+        <%= form_with model: @stock, url: stocks_path do |f| %>
           <%= f.text_field :name, placeholder: "商品名", class: "form-control" %>
           <%= hidden_field :percentage, :value => 100 %>
           <%= f.number_field :stock_amount, class: "form-control", value: 1 %>
           <%= f.date_field :purchase_date, class: "form-control", value: Date.current.strftime("%Y-%m-%d") %>
-          <!--以下はcategory設定後-->
-          <%#= f.select :category_id, options_from_collection_for_select (Category.all, :id, :), class: "form-control" %>
-            <%#= form_with model: @category do |f| %>
-              <%#= f.text_field :name, placeholder: "カテゴリー名", class: "form-control form-sm" %>
-              <%#= f.submit "追加", class: "btn btn-sm btn-success" %>
-            <%# end %>
+          <%= f.select :category_id, options_from_collection_for_select(Category.all, :id, :name), prompt: "選択してください", class: "form-control" %>
+            <%= form_with model: @category, url: categories_path do |f| %>
+              <%= f.text_field :name, placeholder: "カテゴリー名", class: "form-control form-control-sm" %>
+              <%= f.submit "追加", class: "btn btn-sm btn-success" %>
+            <% end %>
+            <% Category.all.each do |category| %>
+              <%= category.name %>
+            <% end %>
           <!--以下はenum設定後-->
           <!--<label>アラート設定</label>-->
           <%#= f.radio_button :alert_date,, class: "form-control"  %>

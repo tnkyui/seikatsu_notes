@@ -24,12 +24,11 @@
         <%= form_with model: @stock do |f| %>
           <%= f.text_field :name, placeholder: "商品名", class: "form-control" %>
 
-          <!--以下はcategory設定後-->
-          <%#= f.select :category_id, options_from_collection_for_select (Category.all, :id, :), class: "form-control" %>
-            <%#= form_with model: @category do |f| %>
-              <%#= f.text_field :name, placeholder: "カテゴリー名", class: "form-control form-sm" %>
-              <%#= f.submit "追加", class: "btn btn-sm btn-success" %>
-            <%# end %>
+          <%= f.select :category_id, options_from_collection_for_select(Category.all, :id, :name), prompt: "選択してください", class: "form-control" %>
+            <%= form_with model: @category do |f| %>
+              <%= f.text_field :name, placeholder: "カテゴリー名", class: "form-control form-control-sm" %>
+              <%= f.submit "追加", class: "btn btn-sm btn-success" %>
+            <% end %>
 
           <!--以下はenum設定後-->
           <!--<label>アラート設定</label>-->
