@@ -15,7 +15,7 @@ class TodoListsController < ApplicationController
 
   private
     def todo_list_params
-      params.require(:todo_list).permit(:name, :start_time)
+      params.require(:todo_list).permit(:name, :start_date)
     end
 
 end

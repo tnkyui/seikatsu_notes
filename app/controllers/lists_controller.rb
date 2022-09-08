@@ -1,11 +1,11 @@
 class ListsController < ApplicationController
 
   def index
-    @shopping_list = ShoppingList.new
     @user = current_user
+    @shopping_list = ShoppingList.new
     @shopping_lists = @user.shopping_lists
-    # @shopping_lists = ShoppingList.all
     @todo_list = TodoList.new
+    @todo_lists = @user.todo_lists
   end
 
 end
