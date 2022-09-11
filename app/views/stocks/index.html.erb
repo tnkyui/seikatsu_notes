@@ -9,18 +9,15 @@
           <%= f.hidden_field :percentage, :value => 100 %>
           <%= f.number_field :stock_amount, class: "form-control", value: 1 %>
           <%= f.date_field :purchase_date, class: "form-control", value: Date.current.strftime("%Y-%m-%d") %>
-          <%= f.select :category_id, options_from_collection_for_select(Category.all, :id, :name) && [['カテゴリー追加(テキスト入力)', 0]] , { prompt: "選択してください" }, { class: "form-control" } %>
-            <%= fields_for :category do |category| %>
-              <%= category.text_field :name, placeholder: "カテゴリー名", class: "form-control form-control-sm" %>
-            <% end %>
+          <%= f.select :category_id, options_from_collection_for_select(Category.all, :id, :name) , { prompt: "選択してください" }, { class: "form-control" } %>
           <label>アラート設定</label>
-          <%= f.radio_button :alert_date, 2 , class: "form-check" %>2日
-          <%= f.radio_button :alert_date, 7 , class: "form-check" %>1週間
-          <%= f.radio_button :alert_date, 14 , class: "form-check" %>2週間
-          <%= f.radio_button :alert_date, 21 , class: "form-check" %>3週間
-          <%= f.radio_button :alert_date, 28 , class: "form-check" %>1ヶ月
-          <%= f.radio_button :alert_date, 0 , class: "form-check" %>設定なし
-          <%= f.hidden_field :alert_date, :value => @alert_date %>
+          <%= f.radio_button :alert_setting, 2 , class: "form-check" %>2日
+          <%= f.radio_button :alert_setting, 7 , class: "form-check" %>1週間
+          <%= f.radio_button :alert_setting, 14 , class: "form-check" %>2週間
+          <%= f.radio_button :alert_setting, 21 , class: "form-check" %>3週間
+          <%= f.radio_button :alert_setting, 28 , class: "form-check" %>1ヶ月
+          <%= f.radio_button :alert_setting, 0 , class: "form-check" %>設定なし
+          <%#= f.hidden_field :alert_date, :value => @alert_date %>
           <%= f.submit "登録", class: "btn btn-primary btn-block" %>
         <% end %>
       </div>

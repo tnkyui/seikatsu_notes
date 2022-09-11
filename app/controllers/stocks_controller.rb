@@ -1,9 +1,8 @@
 class StocksController < ApplicationController
   def index
     @stock = Stock.new
-    @stocks = Stock.all
-    # @stocks = current_user.stocks.all
-    @category = Category.new
+    # @stocks = Stock.all
+    @stocks = current_user.stocks.all
   end
 
   def show
@@ -14,9 +13,8 @@ class StocksController < ApplicationController
   def create
     @stock = Stock.new(stock_params)
     @stock.user_id = current_user.id
-    @alert_date = params[:stock][:purchase_date].to_time.to_datetime + params[:stock][:alert_date].to_i
+    @stock.alert_date = @stock.purchase_date.to_time.to_datetime + params[:stock][:alert_setting].to_i
     @stock.save
-    Stock.create(alert_date: @alert_date)
     redirect_to stocks_path
   end
 
