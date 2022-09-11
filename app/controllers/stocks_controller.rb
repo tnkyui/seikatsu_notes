@@ -1,13 +1,11 @@
 class StocksController < ApplicationController
   def index
     @stock = Stock.new
-    # @stocks = Stock.all
     @stocks = current_user.stocks.all
   end
 
   def show
     @stock = Stock.find(params[:id])
-    @category = Category.new
   end
 
   def create

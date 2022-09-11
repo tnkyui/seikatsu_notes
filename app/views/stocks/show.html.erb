@@ -6,7 +6,7 @@
       <div class="form-group p-3">
         <%= form_with model: @stock do |f| %>
           <%= @stock.name %>
-          <%= f.number_field :percentage, :max= {100}, class: "form-control" %>
+          <%= f.number_field :percentage, class: "form-control" %>
           <%= f.number_field :stock_amount, class: "form-control" %>
           <p class="border_sketch">
             notes<br>
@@ -24,18 +24,14 @@
         <%= form_with model: @stock do |f| %>
           <%= f.text_field :name, placeholder: "商品名", class: "form-control" %>
 
-          <%= f.select :category_id, options_from_collection_for_select(Category.all, :id, :name), prompt: "選択してください", class: "form-control" %>
-            <%= form_with model: @category do |f| %>
-              <%= f.text_field :name, placeholder: "カテゴリー名", class: "form-control form-control-sm" %>
-              <%= f.submit "追加", class: "btn btn-sm btn-success" %>
-            <% end %>
 
-          <!--以下はenum設定後-->
-          <!--<label>アラート設定</label>-->
-          <%#= f.radio_button :alert_date,, class: "form-control"  %>
-          <%#= f.radio_button :alert_date,, class: "form-control"  %>
-          <%#= f.radio_button :alert_date,, class: "form-control"  %>
-          <%#= f.radio_button :alert_date,, class: "form-control"  %>
+          <label>アラート設定</label>
+          <%= f.radio_button :alert_setting, 2 , class: "form-check" %>2日
+          <%= f.radio_button :alert_setting, 7 , class: "form-check" %>1週間
+          <%= f.radio_button :alert_setting, 14 , class: "form-check" %>2週間
+          <%= f.radio_button :alert_setting, 21 , class: "form-check" %>3週間
+          <%= f.radio_button :alert_setting, 28 , class: "form-check" %>1ヶ月
+          <%= f.radio_button :alert_setting, 0 , class: "form-check" %>設定なし
           <%= f.submit "修正", class: "btn btn-success btn-block" %>
         <% end %>
 
