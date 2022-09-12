@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_09_11_162231) do
+ActiveRecord::Schema.define(version: 2022_09_12_142640) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name", null: false
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 2022_09_11_162231) do
     t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "alert_switch", default: true, null: false
   end
 
   create_table "todo_lists", force: :cascade do |t|

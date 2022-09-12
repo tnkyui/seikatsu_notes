@@ -9,10 +9,13 @@ class StocksController < ApplicationController
   end
 
   def create
-    @stock = Stock.new(stock_params)
-    @stock.user_id = current_user.id
-    @stock.alert_date = @stock.purchase_date.to_time.to_datetime + params[:stock][:alert_setting].to_i
-    @stock.save
+    stock = Stock.new(stock_params)
+    stock.user_id = current_user.id
+    stock.alert_date = stock.purchase_date.to_time.to_datetime + params[:stock][:alert_setting].to_i
+    if params[:stock][:alert_setting] == "0"
+      stock.update(alert_switch: "false")
+    end
+    stock.save
     redirect_to stocks_path
   end
 

@@ -6,7 +6,20 @@
       <div class="form-group p-3">
         <%= form_with model: @stock do |f| %>
           <%= @stock.name %>
-          <%= f.number_field :percentage, class: "form-control" %>
+          <%= f.range_field :percentage, in: 0..100, step: 10, list: "datalist", class: "form-control-range" %>
+            <datalist id="datalist">
+              <option value="0">
+              <option value="10">
+              <option value="20">
+              <option value="30">
+              <option value="40">
+              <option value="50">
+              <option value="60">
+              <option value="70">
+              <option value="80">
+              <option value="90">
+              <option value="100">
+            </datalist>
           <%= f.number_field :stock_amount, class: "form-control" %>
           <p class="border_sketch">
             notes<br>
@@ -23,15 +36,19 @@
       <h4 class="headline">在庫編集</h4>
         <%= form_with model: @stock do |f| %>
           <%= f.text_field :name, placeholder: "商品名", class: "form-control" %>
+          <%= f.select :category_id, options_from_collection_for_select(Category.all, :id, :name) , { prompt: "選択してください" }, { class: "form-control custom-select" } %>
 
 
           <label>アラート設定</label>
-          <%= f.radio_button :alert_setting, 2 , class: "form-check" %>2日
-          <%= f.radio_button :alert_setting, 7 , class: "form-check" %>1週間
-          <%= f.radio_button :alert_setting, 14 , class: "form-check" %>2週間
-          <%= f.radio_button :alert_setting, 21 , class: "form-check" %>3週間
-          <%= f.radio_button :alert_setting, 28 , class: "form-check" %>1ヶ月
-          <%= f.radio_button :alert_setting, 0 , class: "form-check" %>設定なし
+          <%= @stock.alert_switch %>
+          <div class="custom-control custom-switch">
+            <%= f.check_box :alert_switch, class: "form-check" %>
+          </div>
+
+
+          <%= f.date_field :alert_date, class: "form-control" %>
+
+
           <%= f.submit "修正", class: "btn btn-success btn-block" %>
         <% end %>
 

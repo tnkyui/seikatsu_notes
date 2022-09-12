@@ -9,7 +9,7 @@
           <%= f.hidden_field :percentage, :value => 100 %>
           <%= f.number_field :stock_amount, class: "form-control", value: 1 %>
           <%= f.date_field :purchase_date, class: "form-control", value: Date.current.strftime("%Y-%m-%d") %>
-          <%= f.select :category_id, options_from_collection_for_select(Category.all, :id, :name) , { prompt: "選択してください" }, { class: "form-control" } %>
+          <%= f.select :category_id, options_from_collection_for_select(Category.all, :id, :name) , { prompt: "選択してください" }, { class: "form-control custom-select" } %>
           <label>アラート設定</label>
           <%= f.radio_button :alert_setting, 2 , class: "form-check" %>2日
           <%= f.radio_button :alert_setting, 7 , class: "form-check" %>1週間
