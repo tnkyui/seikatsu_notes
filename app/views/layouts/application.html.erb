@@ -9,13 +9,33 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
   </head>
 
   <body>
     <header>
-      <div class="text-center">
-        <%= link_to "LogIn", new_user_session_path %>
-        <%= link_to "LogOut", destroy_user_session_path, method: :destroy %>
+      <div class="container">
+        <div class="row">
+          <div class="col m-5">
+            <%= link_to image_tag('seikatsu_notes_logo.png'), home_path %>
+          </div>
+
+          <% if !user_signed_in? %>
+          <div class="col m-5">
+            <%= link_to "初めての方は", new_user_registration_path, class: "btn border-dark" %>
+            <%= link_to "お試しモード", "/", class: "btn border-dark" %>
+            <%= link_to "ログイン", new_user_session_path, class: "btn border-dark" %>
+          </div>
+          <% else %>
+          <div class="col text-right mt-3">
+            <%= link_to "LogOut", destroy_user_session_path, method: :delete, class: "btn border-dark" %>
+          </div>
+          <% end %>
+
+        </div>
       </div>
 
 

@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users, :path => "/"
 
   root to: 'homes#top'
-  get 'index' => 'homes#index'
+  get 'home' => 'homes#index'
 
   get 'users/information/edit' => 'users#edit'
   patch 'users/information' => 'users#update'

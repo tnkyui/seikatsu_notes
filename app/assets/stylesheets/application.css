@@ -14,7 +14,11 @@
  *= require_self
  */
 
-.border_sketch{
+main {
+  font-family: 'Zen Maru Gothic', sans-serif;
+}
+
+.border_sketch {
   border:solid 2px #41403E;
   border-top-left-radius: 255px 15px;
   border-top-right-radius: 15px 225px;
@@ -22,9 +26,13 @@
   border-bottom-left-radius: 15px 255px;
 }
 
-.navbar-button{
-  font-family: 'Architects Daughter';
-  margin: 5px;
+.maker {
+  background: linear-gradient(transparent 50%, #ffce5b 50%);
+}
+
+.navbar-button {
+  font-family: 'Gloria Hallelujah', cursive;
+  margin: 5px 20px;
 }
 
 .headline {
