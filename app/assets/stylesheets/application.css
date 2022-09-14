@@ -14,6 +14,10 @@
  *= require_self
  */
 
+header {
+  border-bottom: thick double #575757;
+}
+
 main {
   font-family: 'Zen Maru Gothic', sans-serif;
 }
