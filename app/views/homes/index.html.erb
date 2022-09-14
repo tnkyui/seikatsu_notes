@@ -7,8 +7,17 @@
 
     <div class="col-8 border_sketch">
 
-      <%= month_calendar do |date| %>
+      <%= month_calendar events: @events do |date, events| %>
         <%= date.day %>
+
+        <% events.each do |event| %>
+          <% if event.class == Stock %>
+            <b><%= event.name %></b>
+          <% else %>
+            <u><%= event.name %></u>
+          <% end %>
+        <% end %>
+
       <% end %>
 
     </div>
