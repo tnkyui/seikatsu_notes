@@ -5,4 +5,8 @@ class ApplicationController < ActionController::Base
     home_path
   end
 
+  def after_sign_up_path_for(resource)
+    home_path
+  end
+
 end
