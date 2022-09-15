@@ -8,13 +8,19 @@
     <div class="col-8 border_sketch">
 
       <%= month_calendar events: @events do |date, events| %>
-        <%= date.day %>
+        <p>
+          <%= date.day %>
+        </p>
 
         <% events.each do |event| %>
           <% if event.class == Stock %>
-            <b><%= event.name %></b>
+            <p class="schedule-name">
+              <i class="fa fa-cutlery" aria-hidden="true"></i><%= event.name %>
+            </p>
           <% else %>
-            <u><%= event.name %></u>
+            <p class="schedule-name">
+              <i class="fa fa-list-alt" aria-hidden="true"></i><%= event.name %>
+            </p>
           <% end %>
         <% end %>
 

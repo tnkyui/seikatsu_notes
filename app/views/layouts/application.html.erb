@@ -6,6 +6,8 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <script src="https://kit.fontawesome.com/8cec986811.js" crossorigin="anonymous"></script>
+
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -32,6 +34,7 @@
           <% else %>
           <div class="col text-right mt-3">
             <%= link_to "LogOut", destroy_user_session_path, method: :delete, class: "btn border-dark" %>
+            <i class="fa-solid fa-gear fa-2x"></i>
           </div>
           <% end %>
 
