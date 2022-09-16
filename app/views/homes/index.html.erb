@@ -1,7 +1,24 @@
 <div class="container">
 <%= render 'layouts/navbar' %>
   <div class="row">
-    <div class="col-4 border_sketch">
+    <div class="col-4">
+      <div class="border_sketch">
+        <h4 class="maker text-center">Add to Shopping List ?</h4>
+        <% @stock.each do |stock| %>
+          <%= stock.name %>
+          <u><%= link_to "Show", stock_path(stock.id) %></u>
+          <%= form_with model: @shopping_list do |f| %>
+            <%= f.hidden_field :name, :value => stock.name %>
+            <%= f.submit "Add", class: "btn btn-sm btn-info" %>
+          <% end %>
+
+        <% end %>
+      </div>
+      <div class="border_sketch">
+        <h4 class="maker text-center">! ALEART !</h4>
+
+      </div>
+
 
     </div>
 

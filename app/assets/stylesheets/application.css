@@ -15,7 +15,7 @@
  *= require_self
  */
 
- 
+
 
 header {
   border-bottom: thick double #575757;
@@ -34,6 +34,8 @@ main {
 }
 
 .maker {
+  margin-top: 30px;
+  padding-left: 10px;
   background: linear-gradient(transparent 50%, #ffce5b 50%);
 }
 
