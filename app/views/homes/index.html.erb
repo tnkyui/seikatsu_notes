@@ -4,7 +4,7 @@
     <div class="col-4">
       <div class="border_sketch">
         <h4 class="maker text-center">Add to Shopping List ?</h4>
-        <% @stock.each do |stock| %>
+        <% @stock_add_list.each do |stock| %>
           <%= stock.name %>
           <u><%= link_to "Show", stock_path(stock.id) %></u>
           <%= form_with model: @shopping_list do |f| %>
@@ -16,7 +16,16 @@
       </div>
       <div class="border_sketch">
         <h4 class="maker text-center">! ALEART !</h4>
-
+        <% @stock_alert.each do |stock| %>
+          <%= stock.name %>
+          購入から
+          <span class="red-text"><%= (Date.current - stock.purchase_date).to_i %></span>日
+          <%#= form_with model: @stock, method: :patch do |f| %>
+            <%#= f.hidden_field :alert_switch, :value => false %>
+            <%#= f.submit "Cold", class: "btn btn-sm btn-info" %>
+          <%# end %>
+          <%= link_to "Edit", stock_path(stock.id), class: "btn btn-sm btn-success" %>
+        <% end %>
       </div>
 
 
