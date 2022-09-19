@@ -14,6 +14,5 @@ class HomesController < ApplicationController
     @shopping_list = ShoppingList.new
     # 以下alert用
     @stock_alert = user.stocks.where(alert_switch: true).where("alert_date <= ?", Date.current)
-    # @stock = Stock.find(params[:id])
   end
 end

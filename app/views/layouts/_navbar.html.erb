@@ -1,7 +1,17 @@
 <div class="row">
   <nav class="navbar mx-auto">
-    <span class="navbar-button"><%= link_to "Stock", stocks_path, class: "btn btn-white border-dark px-4", style: "font-size:22px;" %></span>
-    <span class="navbar-button"><%= link_to "List", lists_path, class: "btn btn-white border-dark px-4",style: "font-size:22px;" %></span>
-    <span class="navbar-button"><%#= link_to "Store" %></span>
+    <button class="navbar-button">
+      <%= link_to stocks_path, class: "navbar-list" do %>
+        <i class="fa fa-cutlery fa-xs fa-navbar-list" aria-hidden="true"></i>Stock
+      <% end %>
+    </button>
+    <button class="navbar-button navbar-center">
+      <%= link_to lists_path, class: "navbar-list" do %>
+        <i class="fa fa-list-alt fa-xs fa-navbar-list" aria-hidden="true"></i>List
+      <% end %>
+    </button>
+    <!--<button class="navbar-button">-->
+      <%#= link_to "Store", class: "navbar-list" %>
+    <!--</button>-->
   </nav>
 </div>

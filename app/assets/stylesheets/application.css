@@ -39,10 +39,42 @@ main {
   background: linear-gradient(transparent 50%, #ffce5b 50%);
 }
 
-.navbar-button {
+.navbar-list {
   font-family: 'Gloria Hallelujah', cursive;
+  color: black;
   margin: 5px 20px;
 }
+
+.navbar-list:hover {
+  text-decoration: none;
+  color: black;
+}
+
+.navbar-button {
+  border-color: rgba(0,0,0,0);
+  border-left: 2px dotted rgba(0,0,0,.1); /* マステの左のギザギザ */
+  border-right: 2px dotted rgba(0,0,0,.1); /* マステの右のギザギザ */
+  box-shadow: 0 0 5px rgba(0,0,0,.2); /* マステに影をつける */
+  transform: rotate(-2deg); /* マステを回転させる */
+  padding: 8px 15px; /* マステの内側の余白 */
+  background-color: #FFFF99; /* マステの色 */
+  font-size: 24px; /* 文字サイズ */
+  margin: 0px 20px 20px 20px;
+}
+
+.navbar-center {
+  transform: rotate(1deg); /* マステを回転させる */
+
+}
+
+.navbar-button:hover {
+  background-color: #FFD700;
+}
+
+.fa-navbar-list {
+  margin-right: 5px;
+}
+
 
 .headline {
   margin-top: 30px;
