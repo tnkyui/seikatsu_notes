@@ -31,7 +31,7 @@ class StocksController < ApplicationController
   private
 
   def stock_params
-    params.require(:stock).permit(:name, :purchase_date, :percentage, :stock_amount, :alert_date, :category_id)
+    params.require(:stock).permit(:name, :purchase_date, :percentage, :stock_amount, :alert_date, :alert_switch, :category_id)
   end
 
   def category_params

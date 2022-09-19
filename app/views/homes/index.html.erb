@@ -20,10 +20,10 @@
           <%= stock.name %>
           購入から
           <span class="red-text"><%= (Date.current - stock.purchase_date).to_i %></span>日
-          <%#= form_with model: @stock, method: :patch do |f| %>
-            <%#= f.hidden_field :alert_switch, :value => false %>
-            <%#= f.submit "Cold", class: "btn btn-sm btn-info" %>
-          <%# end %>
+          <%= form_with model: @stock_alert, url: stock_path(@stock_alert.ids), method: :patch do |f| %>
+            <%= f.hidden_field :alert_switch, :value => "false" %>
+            <%= f.submit "Cold", class: "btn btn-sm btn-info" %>
+          <% end %>
           <%= link_to "Edit", stock_path(stock.id), class: "btn btn-sm btn-success" %>
         <% end %>
       </div>

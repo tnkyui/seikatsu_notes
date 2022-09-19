@@ -23,12 +23,14 @@
         <h4 class="headline">買うものリスト</h4>
         <% @shopping_lists.each do |shopping_list| %>
           <%= shopping_list.name %>
+          <i class="fa fa-times-circle-o" aria-hidden="true"></i>
         <% end %>
       </div>
       <div class="todo_list">
         <h4 class="headline">やることリスト</h4>
         <% @todo_lists.each do |todo_list| %>
           <%= todo_list.name %>
+          <i class="fa fa-times-circle-o" aria-hidden="true"></i>
         <% end %>
 
       </div>
