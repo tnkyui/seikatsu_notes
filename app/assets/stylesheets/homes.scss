@@ -2,13 +2,23 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+.shopping-box, .alert-box {
+  height: 300px;
+  margin-bottom: 15px;
+}
+
+.calendar {
+  padding: 20px;
+}
+
 .simple-calendar {
   .calendar-title{
     font-size: 30px;
     // font-family: ;
   }
   .day {
-    font-size: 13px;
+    font-size: 12px;
+    height: 95px;
   }
 
   .wday-0 {}
