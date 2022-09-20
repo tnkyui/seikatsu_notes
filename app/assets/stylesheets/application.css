@@ -26,16 +26,26 @@ main {
 }
 
 .border_sketch {
-  border:solid 2px #41403E;
-  border-top-left-radius: 255px 15px;
-  border-top-right-radius: 15px 225px;
-  border-bottom-right-radius: 225px 15px;
-  border-bottom-left-radius: 15px 255px;
+  border:solid 2px #333;
+  border-radius: 100px 20px 30px 70px / 20px 60px 40px 40px;
+
+}
+
+.border_sketch_left2 {
+  border: solid 2px #333;
+  border-radius: 100px 20px 30px 70px / 20px 60px 40px 40px;
+
+}
+
+.border_sketch_right {
+  border: solid 2px #333;
+  border-radius: 10px 50px/50px 10px;
+
 }
 
 .maker {
   margin-top: 30px;
-  padding-left: 10px;
+  padding: 0px 10px;
   background: linear-gradient(transparent 50%, #ffce5b 50%);
 }
 
@@ -69,6 +79,7 @@ main {
 
 .navbar-button:hover {
   background-color: #FFD700;
+  transform: rotate(2deg); /* マステを回転させる */
 }
 
 .fa-navbar-list {

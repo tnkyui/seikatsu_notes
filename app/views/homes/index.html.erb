@@ -3,17 +3,19 @@
   <div class="row">
     <div class="col-4">
       <div class="shopping-box border_sketch">
-        <h4 class="maker text-center">Add to Shopping List ?</h4>
+        <h4 class="text-center mt-3">
+          <span class="maker">Add to Shopping List ?</span>
+        </h4>
 
         <table class="table table-borderless">
           <tbody>
             <% @stock_add_list.each do |stock| %>
             <tr>
               <td><%= stock.name %></td>
-              <td>
+              <td class="pr-0">
                 <u><%= link_to "Show", stock_path(stock.id) %></u>
               </td>
-              <td>
+              <td class="pl-0">
                 <%= form_with model: @shopping_list do |f| %>
                   <%= f.hidden_field :name, :value => stock.name %>
                   <%= f.submit "Add", class: "btn btn-sm btn-info" %>
@@ -25,9 +27,10 @@
         </table>
       </div>
 
-
       <div class="alert-box border_sketch">
-        <h4 class="maker text-center">! ALEART !</h4>
+        <h4 class="text-center mt-3">
+          <span class="maker">! ALEART !</span>
+        </h4>
 
         <table class="table table-borderless">
           <tbody>
@@ -37,13 +40,13 @@
               <td class="small">
                 購入から<span class="red-text"><%= (Date.current - stock.purchase_date).to_i %></span>日
               </td>
-              <td>
+              <td class="pr-0">
                 <%= form_with model: @stock_alert, url: stock_path(@stock_alert.ids), method: :patch do |f| %>
                   <%= f.hidden_field :alert_switch, :value => "false" %>
                   <%= f.submit "Cold", class: "btn btn-sm btn-info" %>
                 <% end %>
               </td>
-              <td>
+              <td class="pl-0">
                 <%= link_to "Edit", stock_path(stock.id), class: "btn btn-sm btn-success" %>
               </td>
             </tr>
@@ -53,8 +56,8 @@
       </div>
     </div>
 
-    <div class="col-8 calendar border_sketch">
 
+    <div class="col-8 calendar border_sketch_right">
       <%= month_calendar events: @events do |date, events| %>
         <p>
           <%= date.day %>
