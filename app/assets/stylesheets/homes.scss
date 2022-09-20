@@ -3,8 +3,7 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 .shopping-box, .alert-box {
-  height: 300px;
-  margin-bottom: 15px;
+  height: 48%;
 }
 
 .calendar {
@@ -49,4 +48,28 @@
   color: red;
   font-size: 22px;
   font-weight: bold;
+}
+
+.stock-schedule-name {
+  font-size: 8px;
+  color: black;
+  white-space: nowrap;
+  background-color: rgba(102,153,204,0.7);
+  border-radius: 5px;
+  padding: 5px;
+  margin: 1px
+}
+
+.list-schedule-name {
+  font-size: 8px;
+  color: black;
+  white-space: nowrap;
+  background-color: rgba(102,153,153,0.7);
+  border-radius: 5px;
+  padding: 5px;
+  margin: 1px;
+}
+
+.date {
+  margin: 0px;
 }

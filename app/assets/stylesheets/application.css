@@ -25,22 +25,27 @@ main {
   font-family: 'Zen Maru Gothic', sans-serif;
 }
 
-.border_sketch {
-  border:solid 2px #333;
-  border-radius: 100px 20px 30px 70px / 20px 60px 40px 40px;
+/*.box-border {*/
+  /*border: solid 2px #666;*/
+  /*border-radius: 30px / 40px;*/
 
+/*}*/
+
+.box-border {
+  position: relative;
+  border: solid 2px #666;
+  color: #454545;
+  margin-bottom: 15px;
 }
-
-.border_sketch_left2 {
-  border: solid 2px #333;
-  border-radius: 100px 20px 30px 70px / 20px 60px 40px 40px;
-
-}
-
-.border_sketch_right {
-  border: solid 2px #333;
-  border-radius: 10px 50px/50px 10px;
-
+.box-border:after{
+  position: absolute;
+  content: '';
+  right: -2px;
+  top: -2px;
+  border-width: 0 35px 35px 0;
+  border-style: solid;
+  border-color: #fff #fff #EEE;
+  box-shadow: -3px 3px 3px rgba(0, 0, 0, 0.15);
 }
 
 .maker {

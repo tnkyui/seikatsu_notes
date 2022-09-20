@@ -2,8 +2,8 @@
 <%= render 'layouts/navbar' %>
   <div class="row">
     <div class="col-4">
-      <div class="shopping-box border_sketch">
-        <h4 class="text-center mt-3">
+      <div class="shopping-box box-border">
+        <h4 class="text-center mt-4">
           <span class="maker">Add to Shopping List ?</span>
         </h4>
 
@@ -27,8 +27,8 @@
         </table>
       </div>
 
-      <div class="alert-box border_sketch">
-        <h4 class="text-center mt-3">
+      <div class="alert-box box-border">
+        <h4 class="text-center mt-4">
           <span class="maker">! ALEART !</span>
         </h4>
 
@@ -57,21 +57,21 @@
     </div>
 
 
-    <div class="col-8 calendar border_sketch_right">
+    <div class="col-8 calendar box-border">
       <%= month_calendar events: @events do |date, events| %>
-        <p>
+        <p class="date">
           <%= date.day %>
         </p>
 
         <% events.each do |event| %>
           <% if event.class == Stock %>
             <%= link_to stock_path(@stocks.ids) do %>
-            <p class="schedule-name">
+            <p class="stock-schedule-name">
               <i class="fa fa-cutlery" aria-hidden="true"></i><%= event.name %>
             </p>
             <% end %>
           <% else %>
-            <p class="schedule-name">
+            <p class="list-schedule-name">
               <i class="fa fa-list-alt" aria-hidden="true"></i><%= event.name %>
             </p>
           <% end %>
