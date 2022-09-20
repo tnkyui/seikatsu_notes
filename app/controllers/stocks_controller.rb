@@ -12,6 +12,7 @@ class StocksController < ApplicationController
     stock = Stock.new(stock_params)
     stock.user_id = current_user.id
     stock.alert_date = stock.purchase_date.to_time.to_datetime + params[:stock][:alert_setting].to_i
+    stock.stock_amount = params[:stock][:stock_amount].to_i - 1
     if params[:stock][:alert_setting] == "0"
       stock.update(alert_switch: "false")
     end

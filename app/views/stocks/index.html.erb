@@ -1,27 +1,68 @@
 <div class="container">
 <%= render 'layouts/navbar' %>
   <div class="row">
-    <div class="col-4 border_sketch">
-      <h4 class="headline">在庫登録</h4>
-      <div class="form-group p-3">
-        <%= form_with model: @stock do |f| %>
-          <%= f.text_field :name, placeholder: "商品名", class: "form-control" %>
-          <%= f.hidden_field :percentage, :value => 100 %>
-          <%= f.number_field :stock_amount, class: "form-control", value: 1 %>
-          <%= f.date_field :purchase_date, class: "form-control", value: Date.current.strftime("%Y-%m-%d") %>
-          <%= f.select :category_id, options_from_collection_for_select(Category.all, :id, :name) , { prompt: "選択してください" }, { class: "form-control custom-select" } %>
-          <label>アラート設定</label>
-          <%= f.radio_button :alert_setting, 2 , class: "form-check" %>2日
-          <%= f.radio_button :alert_setting, 7 , class: "form-check" %>1週間
-          <%= f.radio_button :alert_setting, 14 , class: "form-check" %>2週間
-          <%= f.radio_button :alert_setting, 21 , class: "form-check" %>3週間
-          <%= f.radio_button :alert_setting, 28 , class: "form-check" %>1ヶ月
-          <%= f.radio_button :alert_setting, 0 , class: "form-check" %>設定なし
-          <%= f.submit "登録", class: "btn btn-primary btn-block" %>
-        <% end %>
+    <div class="col-4">
+      <div class="box-border">
+        <h4 class="mt-4">
+          <span class="maker">在庫登録</span>
+        </h4>
+        <div class="form-group p-3">
+          <%= form_with model: @stock do |f| %>
+          <table class="table table-borderless">
+            <tbody>
+              <tr>
+                <td colspan="2">
+                  <%= f.text_field :name, placeholder: "商品名", class: "form-control" %>
+                </td>
+              </tr>
+              <tr>
+                <td>購入数</td>
+                <td>
+                  <%= f.hidden_field :percentage, :value => 100 %>
+                  <%= f.number_field :stock_amount, class: "form-control", value: 1, min: 1 %>
+                </td>
+              </tr>
+              <tr>
+                <td>購入日</td>
+                <td>
+                  <%= f.date_field :purchase_date, class: "form-control", value: Date.current.strftime("%Y-%m-%d") %>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <%= f.select :category_id, options_from_collection_for_select(Category.all, :id, :name) , { prompt: "選択してください" }, { class: "form-control custom-select" } %>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  アラート設定<br>
+                  <%= f.radio_button :alert_setting, 2 %>
+                  <%= f.label :alert_setting, "2日後", value: 2 %><br>
+                  <%= f.radio_button :alert_setting, 7 %>
+                  <%= f.label :alert_setting, "1週間後", value: 7 %><br>
+                  <%= f.radio_button :alert_setting, 14 %>
+                  <%= f.label :alert_setting, "2週間後", value: 14 %><br>
+                  <%= f.radio_button :alert_setting, 21 %>
+                  <%= f.label :alert_setting, "3週間後", value: 21 %><br>
+                  <%= f.radio_button :alert_setting, 28 %>
+                  <%= f.label :alert_setting, "4週間後", value: 28 %><br>
+                  <%= f.radio_button :alert_setting, 0 %>
+                  <%= f.label :alert_setting, "設定なし", value: 0 %><br>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <%= f.submit "登録", class: "btn btn-primary btn-block" %>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <% end %>
+        </div>
       </div>
+
     </div>
-    <div class="col-8 px-5 border_sketch">
+    <div class="col-8 px-5 box-border">
       <table class="table table-borderless mt-4 text-center">
         <thead class="border-bottom border-dark">
           <td class="pb-0 align-bottom">名前</td>
@@ -30,14 +71,14 @@
           <td></td>
         </thead>
         <tbody>
+          <% @stocks.each do |stock| %>
           <tr class="my-2">
-            <% @stocks.each do |stock| %>
               <td class="text-left"><%= stock.name %></td>
               <td><%= stock.percentage %>%</td>
               <td><%= stock.stock_amount %></td>
               <td><%= link_to "Show", stock_path(stock.id) %></td>
-            <% end %>
           </tr>
+          <% end %>
        </tbody>
       </table>
 
