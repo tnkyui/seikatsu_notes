@@ -54,9 +54,10 @@
   font-size: 8px;
   color: black;
   white-space: nowrap;
-  background-color: rgba(102,153,204,0.7);
+  background-color: rgba(102,153,204,0.6);
   border-radius: 5px;
-  padding: 5px;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.5);
+  padding: 2px 5px;
   margin: 1px
 }
 
@@ -64,9 +65,10 @@
   font-size: 8px;
   color: black;
   white-space: nowrap;
-  background-color: rgba(102,153,153,0.7);
+  background-color: rgba(102,153,153,0.6);
   border-radius: 5px;
-  padding: 5px;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.5);
+  padding: 2px 5px;
   margin: 1px;
 }
 
