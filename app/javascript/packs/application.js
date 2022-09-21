@@ -16,3 +16,14 @@ import "../stylesheets/application"
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+function change( alert_date, ischecked ) {
+    if( ischecked == true ) {
+      // チェックが入っていたら有効化
+      document.getElementById(alert_date).disabled = false;
+   }
+   else {
+      // チェックが入っていなかったら無効化
+      document.getElementById(alert_date).disabled = true;
+   }
+}

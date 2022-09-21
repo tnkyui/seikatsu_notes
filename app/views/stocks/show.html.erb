@@ -1,57 +1,107 @@
 <div class="container">
 <%= render 'layouts/navbar' %>
   <div class="row">
-    <div class="col-4 border_sketch">
-      <h4 class="headline">在庫更新</h4>
-      <div class="form-group p-3">
-        <%= form_with model: @stock do |f| %>
-          <%= @stock.name %>
-          <%= f.range_field :percentage, in: 0..100, step: 10, list: "datalist", class: "form-control-range" %>
-            <datalist id="datalist">
-              <option value="0">
-              <option value="10">
-              <option value="20">
-              <option value="30">
-              <option value="40">
-              <option value="50">
-              <option value="60">
-              <option value="70">
-              <option value="80">
-              <option value="90">
-              <option value="100">
-            </datalist>
-          <%= f.number_field :stock_amount, class: "form-control" %>
-          <p class="border_sketch">
-            notes<br>
-            残量は0~100%で設定します。<br>
-            ストックは未開封で保存している数を設定します。<br>
-          </p>
-          <%= f.date_field :purchase_date, class: "form-control" %>
-
-          <%= f.submit "更新", class: "btn btn-success btn-block" %>
-        <% end %>
+    <div class="col-4">
+      <div class="box-border">
+        <h4 class="mt-4">
+          <span class="maker">在庫更新</span>
+        </h4>
+        <div class="form-group p-3">
+          <%= form_with model: @stock do |f| %>
+          <table class="table table-borderless">
+            <tbody>
+              <tr>
+                <td>商品名</td>
+                <td><%= @stock.name %></td>
+              </tr>
+              <tr>
+                <td>残量(%)</td>
+                <td>
+                  <%= f.range_field :percentage, in: 0..100, step: 10, list: "datalist", class: "form-control-range" %>
+                  <datalist id="datalist">
+                    <option value="0">
+                    <option value="10">
+                    <option value="20">
+                    <option value="30">
+                    <option value="40">
+                    <option value="50">
+                    <option value="60">
+                    <option value="70">
+                    <option value="80">
+                    <option value="90">
+                    <option value="100">
+                  </datalist>
+                </td>
+              </tr>
+              <tr>
+                <td>ストック数</td>
+                <td><%= f.number_field :stock_amount, class: "form-control", min: 1 %></td>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <p class="border">
+                    notes<br>
+                    残量は0~100%で設定します。<br>
+                    ストックは未開封で保存している数を設定します。<br>
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td>最終購入日</td>
+                <td><%= f.date_field :purchase_date, class: "form-control" %></td>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <%= f.submit "更新", class: "btn btn-success btn-block" %>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <% end %>
+        </div>
       </div>
     </div>
-    <div class="col-8 border_sketch">
-      <h4 class="headline">在庫編集</h4>
+
+    <div class="col-8 box-border">
+      <h4 class="mt-4">
+        <span class="maker">在庫編集</span>
+      </h4>
         <%= form_with model: @stock do |f| %>
-          <%= f.text_field :name, placeholder: "商品名", class: "form-control" %>
-          <%= f.select :category_id, options_from_collection_for_select(Category.all, :id, :name) , { prompt: "選択してください" }, { class: "form-control custom-select" } %>
-
-
-          <label>アラート設定</label>
-          <%= @stock.alert_switch %>
-          <div class="custom-control custom-switch">
-            <%= f.check_box :alert_switch, class: "form-check" %>
-          </div>
-
-
-          <%= f.date_field :alert_date, class: "form-control" %>
-
-
-          <%= f.submit "修正", class: "btn btn-success btn-block" %>
+        <table class="table table-borderless">
+          <tbody>
+            <tr>
+              <td>商品名</td>
+              <td><%= f.text_field :name, placeholder: "商品名", class: "form-control" %></td>
+            </tr>
+            <tr>
+              <td>カテゴリー</td>
+              <td>
+                <%= f.select :category_id, options_from_collection_for_select(Category.all, :id, :name) , { prompt: "選択してください" }, { class: "form-control custom-select" } %>
+              </td>
+            </tr>
+            <tr>
+              <td>アラート設定</td>
+              <td>
+                <div class="custom-control custom-switch">
+                  <%= f.check_box :alert_switch, class: "custom-control-input", onclick: "change('alert_date',this.checked)" %>
+                  <%= f.label :alert_switch, "アラート設定", class: "custom-control-label", :as => :boolean %>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>アラート日時</td>
+              <td>
+                  <%= f.date_field :alert_date, class: "form-control", id: "alert_date" %>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                <%= f.submit "修正", class: "btn btn-success btn-block" %>
+              </td>
+            </tr>
+          </tbody>
+        </table>
         <% end %>
-
     </div>
   </div>
 </div>
