@@ -3,8 +3,15 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 .shopping-box, .alert-box {
+  .maker {
+    font-family: 'Permanent Marker', cursive;
+    color: #222;
+    font-size: 25px;
+  }
   height: 48%;
 }
+
+
 
 .calendar {
   padding: 20px;
@@ -12,8 +19,12 @@
 
 .simple-calendar {
   .calendar-title{
-    font-size: 30px;
-    // font-family: ;
+    font-size: 25px;
+    font-family: 'Permanent Marker', cursive;
+    color: black;
+  }
+  .month_number {
+    font-size: 50px;
   }
   .day {
     font-size: 12px;
@@ -74,4 +85,5 @@
 
 .date {
   margin: 0px;
+  font-family: 'Patrick Hand', cursive;
 }
