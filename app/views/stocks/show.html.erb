@@ -82,8 +82,22 @@
             <tr>
               <td>アラート設定</td>
               <td>
+                <script>
+                　function change() {
+                      var element;
+                      if(document.getElementById("stock_alert_switch").checked) {
+                          // チェックが入っていたら、フォームのdisabledを外す
+                          element = document.getElementById("alert_date");
+                          element.disabled = false;
+                      }else {
+                          // チェックが外れていたら、フォームにdisabledを付ける
+                          element = document.getElementById("alert_date");
+                          element.disabled = true;
+                     }
+                  }
+                </script>
                 <div class="custom-control custom-switch">
-                  <%= f.check_box :alert_switch, class: "custom-control-input", onclick: "change('alert_date',this.checked)" %>
+                  <%= f.check_box :alert_switch, class: "custom-control-input", onchange: "change()" %>
                   <%= f.label :alert_switch, "アラート設定", class: "custom-control-label", :as => :boolean %>
                 </div>
               </td>
