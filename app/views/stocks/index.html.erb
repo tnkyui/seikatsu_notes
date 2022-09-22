@@ -74,9 +74,17 @@
           <% @stocks.each do |stock| %>
           <tr class="my-2">
               <td class="text-left"><%= stock.name %></td>
-              <td><%= stock.percentage %>%</td>
+              <td>
+                <% if stock.percentage <= 20 %>
+                  <b class="text-danger"><%= stock.percentage %>%</b>
+                <% else %>
+                  <%= stock.percentage %>%
+                <% end %>
+              </td>
               <td><%= stock.stock_amount %></td>
-              <td><%= link_to "Show", stock_path(stock.id) %></td>
+              <td>
+                <u><i><%= link_to "Show", stock_path(stock.id), class: "text-dark small" %></i></u>
+              </td>
           </tr>
           <% end %>
        </tbody>
