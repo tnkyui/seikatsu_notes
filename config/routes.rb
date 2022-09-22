@@ -10,9 +10,9 @@ Rails.application.routes.draw do
 
   resources :stocks, only:[:index, :show, :create, :update, :destroy]
   resources :lists,  only:[:index]
-  resources :shopping_lists, only:[:create, :update, :destroy]
-  resources :todo_lists, only:[:create, :update, :destroy]
-  resources :categories, only:[:create, :destroy]
+  resources :shopping_lists, only:[:create, :destroy]
+  resources :todo_lists, only:[:create, :destroy]
+  # resources :categories, only:[:create, :destroy]
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

@@ -7,10 +7,10 @@ class TodoListsController < ApplicationController
     redirect_to lists_path
   end
 
-  def update
-  end
-
   def destroy
+    todo_list = TodoList.find(params[:id])
+    todo_list.destroy
+    redirect_to lists_path
   end
 
   private
