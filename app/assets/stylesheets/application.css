@@ -74,7 +74,7 @@ main {
   padding: 8px 30px; /* マステの内側の余白 */
   background-color: #FFFF99; /* マステの色 */
   font-size: 24px; /* 文字サイズ */
-  margin: 0px 10px 1git 0px 20px;
+  margin: 0px 10px 10px 20px;
 }
 
 .navbar-center {

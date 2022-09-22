@@ -34,7 +34,7 @@
                 </td>
               </tr>
               <tr>
-                <td>ストック数</td>
+                <td>ｽﾄｯｸ数</td>
                 <td><%= f.number_field :stock_amount, class: "form-control", min: 1 %></td>
               </tr>
               <tr>
@@ -47,7 +47,7 @@
                 </td>
               </tr>
               <tr>
-                <td>最終購入日</td>
+                <td>購入日</td>
                 <td><%= f.date_field :purchase_date, class: "form-control" %></td>
               </tr>
               <tr>
@@ -67,7 +67,7 @@
         <span class="maker">在庫詳細修正</span>
       </h4>
         <%= form_with model: @stock do |f| %>
-        <table class="table table-borderless">
+        <table class="table table-borderless mt-5">
           <tbody>
             <tr>
               <td>商品名</td>
@@ -98,7 +98,7 @@
                 </script>
                 <div class="custom-control custom-switch">
                   <%= f.check_box :alert_switch, class: "custom-control-input", onchange: "change()" %>
-                  <%= f.label :alert_switch, "アラートをオンにすると、ホーム画面に表示されます", class: "custom-control-label", :as => :boolean %>
+                  <%= f.label :alert_switch, "アラートをオンにすると、ホーム画面のカレンダーに表示されます", class: "custom-control-label", :as => :boolean %>
                 </div>
               </td>
             </tr>
