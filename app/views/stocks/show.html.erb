@@ -39,10 +39,10 @@
               </tr>
               <tr>
                 <td colspan="2">
-                  <p class="border">
-                    notes<br>
-                    残量は0~100%で設定します。<br>
-                    ストックは未開封で保存している数を設定します。<br>
+                  <p class="border small p-3 bg-light">
+                    <i><u>NOTE</u></i><br>
+                    残量： 0~100%で設定<br>
+                    ストック： 未開封で保管している数を設定<br>
                   </p>
                 </td>
               </tr>
@@ -98,7 +98,7 @@
                 </script>
                 <div class="custom-control custom-switch">
                   <%= f.check_box :alert_switch, class: "custom-control-input", onchange: "change()" %>
-                  <%= f.label :alert_switch, "アラートをオンにすると、ホーム画面のカレンダーに表示されます", class: "custom-control-label", :as => :boolean %>
+                  <%= f.label :alert_switch, "アラートをオンにすると、ホーム画面のカレンダーに表示されます", class: "custom-control-label small", :as => :boolean %>
                 </div>
               </td>
             </tr>
@@ -110,7 +110,12 @@
             </tr>
             <tr>
               <td colspan="2">
-                <%= f.submit "修正", class: "btn btn-success btn-block" %>
+                <%= f.submit "修正", class: "btn btn-success btn-block mt-5" %>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                <%= link_to "「#{ @stock.name }」を削除", stock_path(@stock.id), method: :delete, class: "btn btn-danger btn-block btn-sm" %>
               </td>
             </tr>
           </tbody>
