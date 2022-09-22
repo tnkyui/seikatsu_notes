@@ -64,7 +64,7 @@
 
     <div class="col-8 box-border">
       <h4 class="mt-4">
-        <span class="maker">在庫編集</span>
+        <span class="maker">在庫詳細修正</span>
       </h4>
         <%= form_with model: @stock do |f| %>
         <table class="table table-borderless">
@@ -98,7 +98,7 @@
                 </script>
                 <div class="custom-control custom-switch">
                   <%= f.check_box :alert_switch, class: "custom-control-input", onchange: "change()" %>
-                  <%= f.label :alert_switch, "アラート設定", class: "custom-control-label", :as => :boolean %>
+                  <%= f.label :alert_switch, "アラートをオンにすると、ホーム画面に表示されます", class: "custom-control-label", :as => :boolean %>
                 </div>
               </td>
             </tr>

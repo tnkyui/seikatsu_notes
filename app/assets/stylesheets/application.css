@@ -71,10 +71,10 @@ main {
   border-right: 2px dotted rgba(0,0,0,.1); /* マステの右のギザギザ */
   box-shadow: 0 0 5px rgba(0,0,0,.2); /* マステに影をつける */
   transform: rotate(-2deg); /* マステを回転させる */
-  padding: 8px 15px; /* マステの内側の余白 */
+  padding: 8px 30px; /* マステの内側の余白 */
   background-color: #FFFF99; /* マステの色 */
   font-size: 24px; /* 文字サイズ */
-  margin: 0px 20px 20px 20px;
+  margin: 0px 10px 1git 0px 20px;
 }
 
 .navbar-center {
