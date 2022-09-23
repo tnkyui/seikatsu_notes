@@ -12,3 +12,16 @@
   display: inline-block;
   transform: scale(1.2);
 }
+
+.shopping_list {
+  position: relative;
+}
+
+.shopping_list:after {
+  position: absolute;
+  content: "";
+  border-right: 2px dashed #BBB;
+  right: 0;
+  top: 10%;
+  height: 80%;
+}
