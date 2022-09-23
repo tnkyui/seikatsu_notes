@@ -2,6 +2,7 @@ class StocksController < ApplicationController
   def index
     @stock = Stock.new
     @stocks = current_user.stocks.all
+    @shopping_list = ShoppingList.new
   end
 
   def show
