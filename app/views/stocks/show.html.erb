@@ -35,11 +35,11 @@
               </tr>
               <tr>
                 <td>ｽﾄｯｸ数</td>
-                <td><%= f.number_field :stock_amount, class: "form-control", min: 1 %></td>
+                <td><%= f.number_field :stock_amount, class: "form-control", min: 0 %></td>
               </tr>
               <tr>
                 <td colspan="2">
-                  <p class="border small p-3 bg-light">
+                  <p class="border small p-2 bg-light">
                     <i><u>NOTE</u></i><br>
                     残量： 0~100%で設定<br>
                     ストック： 未開封で保管している数を設定<br>
@@ -55,6 +55,14 @@
                   <%= f.submit "更新", class: "btn btn-success btn-block" %>
                 </td>
               </tr>
+              <% if %>
+
+              <tr>
+                <td colspan="2">
+
+                </td>
+              </tr>
+              <% end %>
             </tbody>
           </table>
           <% end %>

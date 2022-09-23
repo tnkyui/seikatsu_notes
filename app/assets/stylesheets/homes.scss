@@ -31,6 +31,10 @@
     height: 95px;
   }
 
+  tr {
+    font-family: 'Permanent Marker', cursive;
+  }
+
   .wday-0 {}
   .wday-1 {}
   .wday-2 {}
@@ -40,8 +44,13 @@
   .wday-6 {}
 
   .today {
-    color: red;
-    font-weight: bold;
+    .date {
+      background: #FF6666;
+      border-radius: 50%;
+      width: 18px;
+      text-align: center;
+      transform: scale(1.3);
+    }
   }
   .past {}
   .future {}
@@ -50,7 +59,9 @@
 
   .prev-month {}
   .next-month { }
-  .current-month {}
+  .current-month {
+    background-color: white;
+  }
 
   .has-events {}
 }
