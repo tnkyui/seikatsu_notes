@@ -11,13 +11,13 @@
           <tbody>
             <% @stock_add_list.each do |stock| %>
             <tr>
-              <td><%= stock.name %></td>
+              <td><%= stock %></td>
               <td class="pr-0">
-                <u><i><%= link_to "Show", stock_path(stock.id), class: "text-dark" %></i></u>
+                <!--<u><i><%#= link_to "Show", stock_path(stock.id), class: "text-dark" %></i></u>-->
               </td>
               <td class="pl-0">
                 <%= form_with model: @shopping_list do |f| %>
-                  <%= f.hidden_field :name, :value => stock.name %>
+                  <%= f.hidden_field :name, :value => stock %>
                   <%= f.submit "Add", class: "btn btn-sm btn-info" %>
                 <% end %>
               </td>
