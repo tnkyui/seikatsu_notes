@@ -3,6 +3,8 @@ class StocksController < ApplicationController
     @stock = Stock.new
     @stocks = current_user.stocks.all
     @shopping_list = ShoppingList.new
+    # 以下リストへ追加ボタン
+    @shopping_list_name = current_user.shopping_lists.pluck(:name)
   end
 
   def show

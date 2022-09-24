@@ -88,7 +88,9 @@
                 <%= form_with model: @shopping_list do |f| %>
                   <%= f.hidden_field :name, :value => stock.name %>
 
-                  <% if stock.percentage <= 30 && stock.stock_amount == 0 %>
+                  <% if @shopping_list_name.include?(stock.name) %>
+                    <%= f.submit "リスト追加済", class: "btn btn-secondary btn-sm", disabled: true %>
+                  <% elsif stock.percentage <= 30 && stock.stock_amount == 0 %>
                     <%= f.submit "リスト追加", class: "btn btn-info btn-sm" %>
                   <% else %>
                     <%= f.submit "リスト追加", class: "btn btn-outline-secondary btn-sm", disabled: true %>
