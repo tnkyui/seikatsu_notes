@@ -12,13 +12,25 @@ class StocksController < ApplicationController
   def create
     stock = Stock.new(stock_params)
     stock.user_id = current_user.id
-    stock.alert_date = stock.purchase_date.to_time.to_datetime + params[:stock][:alert_setting].to_i
-    stock.stock_amount = params[:stock][:stock_amount].to_i - 1
-    if params[:stock][:alert_setting] == "0"
-      stock.update(alert_switch: "false")
+    in_stock = current_user.stocks.find_by(name: params[:stock][:name])
+    if in_stock.present?  #もしｽﾄｯｸに同じ名称の在庫があったら
+      in_stock.stock_amount += params[:stock][:stock_amount].to_i
+      in_stock.purchase_date = params[:stock][:purchase_date]
+      in_stock.category_id = params[:stock][:category_id]
+      in_stock.alert_date = in_stock.purchase_date.to_time.to_datetime + params[:stock][:alert_setting].to_i
+        if params[:stock][:alert_setting] == "0"
+          in_stock.update(alert_switch: "false")
+        end
+      in_stock.save
+      redirect_to stock_path(in_stock.id)
+    elsif stock.alert_date = stock.purchase_date.to_time.to_datetime + params[:stock][:alert_setting].to_i
+      stock.stock_amount = params[:stock][:stock_amount].to_i - 1
+        if params[:stock][:alert_setting] == "0"
+          stock.update(alert_switch: "false")
+        end
+      stock.save
+      redirect_to stocks_path
     end
-    stock.save
-    redirect_to stocks_path
   end
 
   def update
