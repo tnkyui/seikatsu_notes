@@ -66,14 +66,14 @@
         <% events.each do |event| %>
           <% if event.class == Stock %>
             <%= link_to stock_path(@stocks.ids) do %>
-            <p class="stock-schedule-name">
+            <button class="stock-schedule-name">
               <i class="fa fa-cutlery" aria-hidden="true"></i><%= event.name %>
-            </p>
+            </button>
             <% end %>
           <% else %>
-            <p class="list-schedule-name">
+            <button class="list-schedule-name">
               <i class="fa fa-list-alt" aria-hidden="true"></i><%= event.name %>
-            </p>
+            </button>
           <% end %>
         <% end %>
 

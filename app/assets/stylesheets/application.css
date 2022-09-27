@@ -25,6 +25,11 @@ main {
   font-family: 'Zen Maru Gothic', sans-serif;
 }
 
+button {
+  border: none;
+  outline: none;
+}
+
 /*.box-border {*/
   /*border: solid 2px #666;*/
   /*border-radius: 30px / 40px;*/
@@ -89,13 +94,4 @@ main {
 
 .fa-navbar-list {
   margin-right: 5px;
-}
-
-
-.headline {
-  margin-top: 30px;
-  padding-left: 10px;
-  border-bottom: 2px solid #41403E;
-  border-bottom-right-radius: 225px 15px;
-  border-bottom-left-radius: 15px 255px;
 }

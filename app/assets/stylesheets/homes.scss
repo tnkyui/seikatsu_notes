@@ -80,7 +80,11 @@
   border-radius: 5px;
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.5);
   padding: 2px 5px;
-  margin: 1px
+  margin-top: 4px;
+}
+
+.stock-schedule-name:hover {
+  background-color: darken(rgba(102,153,204,0.6), 20%);
 }
 
 .list-schedule-name {
@@ -91,7 +95,11 @@
   border-radius: 5px;
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.5);
   padding: 2px 5px;
-  margin: 1px;
+  margin-top: 4px;
+}
+
+.list-schedule-name:hover {
+  background-color: darken(rgba(102,153,153,0.6), 20%);
 }
 
 .date {
