@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_09_12_142640) do
+ActiveRecord::Schema.define(version: 2022_10_03_065733) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name", null: false
@@ -44,6 +44,8 @@ ActiveRecord::Schema.define(version: 2022_09_12_142640) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.date "start_date", null: false
+    t.boolean "complete_switch", default: false, null: false
+    t.integer "repeat_days", default: 0, null: false
   end
 
   create_table "users", force: :cascade do |t|
