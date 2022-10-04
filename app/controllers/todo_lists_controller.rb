@@ -7,6 +7,12 @@ class TodoListsController < ApplicationController
     redirect_to lists_path
   end
 
+  def update
+    todo_list = TodoList.find(params[:id])
+    todo_list.update
+    redirect_to lists_path
+  end
+
   def destroy
     todo_list = TodoList.find(params[:id])
     todo_list.destroy

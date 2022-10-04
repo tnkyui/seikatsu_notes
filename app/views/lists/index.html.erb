@@ -81,6 +81,12 @@
                 <td><%= todo_list.start_date.strftime("%m/%d") %></td>
                 <td><%= todo_list.name %></td>
                 <td>
+                  <%= form_with model: @todo_list, method: :patch do |f| %>
+                    <%= f.hidden_field :complete_switch, :value => true %>
+                    <%= f.submit "完了", class: "btn btn-sm btn-info" %>
+                  <% end %>
+                </td>
+                <td>
                   <%= link_to todo_list_path(todo_list.id), method: :delete, class: "destroy-btn" do %>
                     <i class="fa fa-trash" aria-hidden="true"></i></i>
                   <% end %>
