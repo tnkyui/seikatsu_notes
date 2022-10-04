@@ -72,34 +72,38 @@
   font-weight: bold;
 }
 
-.stock-schedule-name {
+.event-schedule-name {
   font-size: 8px;
   color: black;
   white-space: nowrap;
-  background-color: rgba(102,153,204,0.6);
   border-radius: 5px;
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.5);
   padding: 2px 5px;
   margin-top: 4px;
 }
 
-.stock-schedule-name:hover {
+.stock-name {
+  background-color: rgba(102,153,204,0.6);
+}
+
+.stock-name:hover {
   background-color: darken(rgba(102,153,204,0.6), 20%);
 }
 
-.list-schedule-name {
-  font-size: 8px;
-  color: black;
-  white-space: nowrap;
+.todolist-name {
   background-color: rgba(102,153,153,0.6);
-  border-radius: 5px;
-  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.5);
-  padding: 2px 5px;
-  margin-top: 4px;
 }
 
-.list-schedule-name:hover {
+.todolist-name:hover {
   background-color: darken(rgba(102,153,153,0.6), 20%);
+}
+
+.completelist-name {
+  color: gray;
+}
+
+.completelist-name:hover {
+
 }
 
 .date {

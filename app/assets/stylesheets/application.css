@@ -25,6 +25,10 @@ main {
   font-family: 'Zen Maru Gothic', sans-serif;
 }
 
+/*.table td {*/
+  /*vertical-align: middle;*/
+/*}*/
+
 button {
   border: none;
   outline: none;

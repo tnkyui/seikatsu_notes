@@ -66,13 +66,21 @@
         <% events.each do |event| %>
           <% if event.class == Stock %>
             <%= link_to stock_path(@stocks.ids) do %>
-            <button class="stock-schedule-name">
+            <button class="event-schedule-name stock-name">
               <i class="fa fa-cutlery" aria-hidden="true"></i><%= event.name %>
             </button>
             <% end %>
+          <% elsif event.class != Stock && event.complete_switch == false %>
+            <%= form_with model: @todo_lists, url: todo_list_path(@todo_lists.ids), method: :patch do |f| %>
+              <%= f.hidden_field :complete_switch, :value => "true" %>
+              <button type="submit" class="event-schedule-name todolist-name">
+                <i class="fa fa-list-alt" aria-hidden="true"></i><%= event.name %>
+              </button>
+            <% end %>
+
           <% else %>
-            <button class="list-schedule-name">
-              <i class="fa fa-list-alt" aria-hidden="true"></i><%= event.name %>
+            <button class="event-schedule-name completelist-name">
+              <i class="fa fa-check-circle-o" aria-hidden="true"></i><%= event.name %>
             </button>
           <% end %>
         <% end %>
