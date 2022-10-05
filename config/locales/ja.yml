@@ -1,6 +1,6 @@
 ja:
   enums:
-    order:
+    stock:
       category:
         meats_fish: "肉/魚"
         vegetables: "野菜"
