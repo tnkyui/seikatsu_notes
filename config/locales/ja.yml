@@ -1,0 +1,14 @@
+ja:
+  enums:
+    order:
+      category:
+        meats_fish: "肉/魚"
+        vegetables: "野菜"
+        other_food: "他食品"
+        drink: "飲料"
+        kitchen_tools: "台所用品"
+        cleaning: "掃除"
+        beauty: "美容"
+        daily_necessities: "日用品"
+        other: "その他"
+        not_set: "未設定"
