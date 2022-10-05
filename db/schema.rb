@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 2022_10_03_065733) do
     t.integer "stock_amount", null: false
     t.integer "category", null: false
     t.datetime "alert_date", null: false
-    t.boolean "hidden_switch", default: false, null: false
+    t.boolean "hidden_switch", default: true, null: false
     t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
