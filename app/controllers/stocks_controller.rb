@@ -19,7 +19,7 @@ class StocksController < ApplicationController
     if in_stock.present?  #もしｽﾄｯｸに同じ名称の在庫があったら
       in_stock.stock_amount += params[:stock][:stock_amount].to_i
       in_stock.purchase_date = params[:stock][:purchase_date]
-      # in_stock.category_id = params[:stock][:category_id]
+      in_stock.category = params[:stock][:category]
       in_stock.alert_date = in_stock.purchase_date.to_time.to_datetime + params[:stock][:alert_setting].to_i
         if params[:stock][:alert_setting] == "0"
           in_stock.update(alert_switch: "false")
@@ -51,7 +51,7 @@ class StocksController < ApplicationController
   private
 
   def stock_params
-    params.require(:stock).permit(:name, :purchase_date, :percentage, :stock_amount, :alert_date, :alert_switch).merge(category: Stock.categories[params[:stock][:category]])
+    params.require(:stock).permit(:name, :purchase_date, :percentage, :stock_amount, :alert_date, :alert_switch, :category).merge(category: Stock.categories[params[:stock][:category]])
   end
 
   def category_params

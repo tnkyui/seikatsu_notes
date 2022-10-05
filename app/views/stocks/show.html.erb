@@ -52,6 +52,7 @@
               </tr>
               <tr>
                 <td colspan="2">
+                  <%= f.hidden_field :category, :value => @stock.category %>
                   <%= f.submit "更新", class: "btn btn-success btn-block" %>
                 </td>
               </tr>
