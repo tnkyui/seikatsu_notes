@@ -7,24 +7,26 @@
           <span class="maker">Add to Shopping List ?</span>
         </h4>
 
-        <table class="table table-borderless">
-          <tbody>
-            <% @stock_add_list.each do |stock| %>
-            <tr>
-              <td><%= stock %></td>
-              <td class="pr-0">
-                <!--<u><i><%#= link_to "Show", stock_path(stock.id), class: "text-dark" %></i></u>-->
-              </td>
-              <td class="pl-0">
-                <%= form_with model: @shopping_list do |f| %>
-                  <%= f.hidden_field :name, :value => stock %>
-                  <%= f.submit "Add", class: "btn btn-sm btn-info" %>
-                <% end %>
-              </td>
-            </tr>
-            <% end %>
-          </tbody>
-        </table>
+        <div class="p-3">
+          <table class="table table-borderless">
+            <tbody>
+              <% @stock_add_list.each do |stock| %>
+              <tr>
+                <td><%= stock %></td>
+                <td class="pr-0">
+                  <!--<u><i><%#= link_to "Show", stock_path(stock.id), class: "text-dark" %></i></u>-->
+                </td>
+                <td class="pl-0">
+                  <%= form_with model: @shopping_list do |f| %>
+                    <%= f.hidden_field :name, :value => stock %>
+                    <%= f.submit "Add", class: "btn btn-sm btn-info" %>
+                  <% end %>
+                </td>
+              </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
       </div>
 
       <div class="alert-box box-border">
@@ -32,27 +34,29 @@
           <span class="maker">! ALEART !</span>
         </h4>
 
-        <table class="table table-borderless">
-          <tbody>
-            <% @stock_alert.each do |stock| %>
-            <tr>
-              <td><%= stock.name %></td>
-              <td class="small">
-                購入から<span class="red-text"><%= (Date.current - stock.purchase_date).to_i %></span>日
-              </td>
-              <td class="pr-0">
-                <%= form_with model: @stock_alert, url: stock_path(@stock_alert.ids), method: :patch do |f| %>
-                  <%= f.hidden_field :alert_switch, :value => "false" %>
-                  <%= f.submit "Cold", class: "btn btn-sm btn-info" %>
-                <% end %>
-              </td>
-              <td class="pl-0">
-                <%= link_to "Edit", stock_path(stock.id), class: "btn btn-sm btn-success" %>
-              </td>
-            </tr>
-            <% end %>
-          </tbody>
-        </table>
+        <div class="p-3">
+          <table class="table table-borderless">
+            <tbody>
+              <% @stock_alert.each do |stock| %>
+              <tr>
+                <td><%= stock.name %></td>
+                <td class="small">
+                  購入から<span class="red-text"><%= (Date.current - stock.purchase_date).to_i %></span>日
+                </td>
+                <td class="pr-0">
+                  <%= form_with model: @stock_alert, url: stock_path(@stock_alert.ids), method: :patch do |f| %>
+                    <%= f.hidden_field :alert_switch, :value => "false" %>
+                    <%= f.submit "Cold", class: "btn btn-sm btn-info" %>
+                  <% end %>
+                </td>
+                <td class="pl-0">
+                  <%= link_to "Edit", stock_path(stock.id), class: "btn btn-sm btn-success" %>
+                </td>
+              </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
 
