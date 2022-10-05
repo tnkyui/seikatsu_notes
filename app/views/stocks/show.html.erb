@@ -76,7 +76,7 @@
             <tr>
               <td>カテゴリー</td>
               <td>
-                <%= f.select :category_id, options_from_collection_for_select(Category.all, :id, :name) , { prompt: "選択してください" }, { class: "form-control custom-select" } %>
+                <%= f.select :category, Stock.categories.keys.map {|k| [I18n.t("enums.stock.category.#{k}"), k]}, {  }, { class: "form-control custom-select" } %>
               </td>
             </tr>
             <tr>
