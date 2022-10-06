@@ -81,15 +81,6 @@
               </td>
             </tr>
             <tr>
-              <td></td>
-              <td>
-                <div class="custom-control custom-switch">
-                  <%= f.check_box :hidden_switch, class: "custom-control-input" %>
-                  <%= f.label :hidden_switch, "残量が僅かになると、ホーム画面でリスト追加候補として表示します。購入する予定がなければオフにしてください。", class: "custom-control-label small", :as => :boolean %>
-                </div>
-              </td>
-            </tr>
-            <tr>
               <td>アラート設定</td>
               <td>
                 <script>
@@ -119,8 +110,20 @@
               </td>
             </tr>
             <tr>
+              <td></td>
+              <td>
+                <div class="custom-control custom-switch">
+                  <%= f.check_box :hidden_switch, class: "custom-control-input" %>
+                  <%= f.label :hidden_switch, class: "custom-control-label small", :as => :boolean do %>
+                    残量が僅かになると、ホーム画面でリスト追加候補として表示します。<br>
+                    購入する予定がなければオフにしてください。
+                  <% end %>
+                </div>
+              </td>
+            </tr>
+            <tr>
               <td colspan="2">
-                <%= f.submit "修正", class: "btn btn-success btn-block mt-5" %>
+                <%= f.submit "修正", class: "btn btn-success btn-block mt-2" %>
               </td>
             </tr>
             <tr>
