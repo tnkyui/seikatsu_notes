@@ -52,7 +52,7 @@
               </tr>
               <tr>
                 <td colspan="2">
-                  <%= f.hidden_field :category, :value => @stock.category %>
+                  <%#= f.hidden_field :category, :value => @stock.category %>
                   <%= f.submit "更新", class: "btn btn-success btn-block" %>
                 </td>
               </tr>
@@ -77,7 +77,7 @@
             <tr>
               <td>カテゴリー</td>
               <td>
-                <%= f.select :category, Stock.categories.keys.map {|k| [I18n.t("enums.stock.category.#{k}"), k]}, {  }, { class: "form-control custom-select" } %>
+                <%= f.select :category, Stock.categories.keys.map {|k| [I18n.t("enums.stock.category.#{k}"), k]}.to_h, {  }, { class: "form-control custom-select" } %>
               </td>
             </tr>
             <tr>

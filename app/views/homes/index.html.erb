@@ -23,13 +23,12 @@
                   <% end %>
                 </td>
                 <td>
-                  <%#= form_with model: @stock_id, url: stock_path(@stock_id.ids), method: :patch, data: { confirm: '候補欄から非表示にしますか？'} do |f| %>
-                    <%#= f.hidden_field :hidden_switch, :value => "false" %>
-                    <%#= f.hidden_field :category, :value => @stock_id.categories %>
-                    <!--<button type="submit" class="bg-transparent destroy-btn">-->
-                      <!--<i class="fa fa-ban" aria-hidden="true"></i>-->
-                    <!--</button>-->
-                  <%# end %>
+                  <%= form_with model: @stock_id, url: stock_path(@stock_id.ids), method: :patch, data: { confirm: '候補欄から非表示にしますか？'} do |f| %>
+                    <%= f.hidden_field :hidden_switch, :value => "false" %>
+                    <button type="submit" class="bg-transparent destroy-btn">
+                      <i class="fa fa-ban" aria-hidden="true"></i>
+                    </button>
+                  <% end %>
                 </td>
               </tr>
               <% end %>

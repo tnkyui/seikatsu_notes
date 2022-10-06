@@ -30,7 +30,7 @@
               </tr>
               <tr>
                 <td colspan="2">
-                  <%= f.select :category, Stock.categories.keys.map {|k| [I18n.t("enums.stock.category.#{k}"), k]}, { selected: Stock.categories.key(99) }, { class: "form-control custom-select" } %>
+                  <%= f.select :category, Stock.categories.keys.map {|k| [I18n.t("enums.stock.category.#{k}"), k]}.to_h, { selected: Stock.categories.key(99) }, { class: "form-control custom-select" } %>
                 </td>
               </tr>
               <tr>
