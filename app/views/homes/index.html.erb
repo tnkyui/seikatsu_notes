@@ -13,14 +13,23 @@
               <% @stock_add_list.each do |stock| %>
               <tr>
                 <td><%= stock %></td>
-                <td class="pr-0">
+                <td class="text-right">
                   <u><i><%= link_to "Show", stock_path(@stock_id.ids), class: "text-dark" %></i></u>
                 </td>
-                <td class="pl-0">
+                <td class="">
                   <%= form_with model: @shopping_list do |f| %>
                     <%= f.hidden_field :name, :value => stock %>
                     <%= f.submit "Add", class: "btn btn-sm btn-info" %>
                   <% end %>
+                </td>
+                <td>
+                  <%#= form_with model: @stock_id, url: stock_path(@stock_id.ids), method: :patch, data: { confirm: '候補欄から非表示にしますか？'} do |f| %>
+                    <%#= f.hidden_field :hidden_switch, :value => "false" %>
+                    <%#= f.hidden_field :category, :value => @stock_id.categories %>
+                    <!--<button type="submit" class="bg-transparent destroy-btn">-->
+                      <!--<i class="fa fa-ban" aria-hidden="true"></i>-->
+                    <!--</button>-->
+                  <%# end %>
                 </td>
               </tr>
               <% end %>
@@ -43,13 +52,13 @@
                 <td class="small">
                   購入から<span class="red-text"><%= (Date.current - stock.purchase_date).to_i %></span>日
                 </td>
-                <td class="pr-0">
+                <td class="text-right">
                   <%= form_with model: @stock_alert, url: stock_path(@stock_alert.ids), method: :patch do |f| %>
                     <%= f.hidden_field :alert_switch, :value => "false" %>
                     <%= f.submit "Cold", class: "btn btn-sm btn-info" %>
                   <% end %>
                 </td>
-                <td class="pl-0">
+                <td>
                   <%= link_to "Edit", stock_path(stock.id), class: "btn btn-sm btn-success" %>
                 </td>
               </tr>

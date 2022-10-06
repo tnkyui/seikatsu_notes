@@ -27,6 +27,7 @@ class StocksController < ApplicationController
       in_stock.save
       redirect_to stock_path(in_stock.id)
     elsif stock.alert_date = stock.purchase_date.to_time.to_datetime + params[:stock][:alert_setting].to_i
+      # stock.category = params[:stock][:category].values
       stock.stock_amount = params[:stock][:stock_amount].to_i - 1
         if params[:stock][:alert_setting] == "0"
           stock.update(alert_switch: "false")
