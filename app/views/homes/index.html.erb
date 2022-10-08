@@ -13,20 +13,20 @@
               <% @stock_add_list.each do |stock| %>
               <tr>
                 <td><%= stock %></td>
-                <td class="text-right">
+                <td class="text-right align-bottom">
                   <u><i><%= link_to "Show", stock_path(@stock_id.ids), class: "text-dark" %></i></u>
                 </td>
-                <td class="">
+                <td class="text-right">
                   <%= form_with model: @shopping_list do |f| %>
                     <%= f.hidden_field :name, :value => stock %>
-                    <%= f.submit "Add", class: "btn btn-sm btn-info" %>
+                    <%= f.submit" Add ", class: "btn btn-sm btn-info" %>
                   <% end %>
                 </td>
                 <td>
                   <%= form_with model: @stock_id, url: stock_path(@stock_id.ids), method: :patch, data: { confirm: "候補欄から非表示にしますか？\n※今後も在庫一覧ページからリストへ追加できます"} do |f| %>
                     <%= f.hidden_field :hidden_switch, :value => "false" %>
-                    <button type="submit" class="bg-transparent destroy-btn">
-                      <i class="fa fa-ban" aria-hidden="true"></i>
+                    <button type="submit" class="btn btn-sm btn-block btn-danger">
+                      <i class="fa fa-ban fa-lg" aria-hidden="true"></i>
                     </button>
                   <% end %>
                 </td>
@@ -54,11 +54,11 @@
                 <td class="text-right">
                   <%= form_with model: @stock_alert, url: stock_path(@stock_alert.ids), method: :patch do |f| %>
                     <%= f.hidden_field :alert_switch, :value => "false" %>
-                    <%= f.submit "Cold", class: "btn btn-sm btn-info" %>
+                    <%= f.submit "Cold", class: "btn btn-sm btn-block btn-info" %>
                   <% end %>
                 </td>
                 <td>
-                  <%= link_to "Edit", stock_path(stock.id), class: "btn btn-sm btn-success" %>
+                  <%= link_to "Edit", stock_path(stock.id), class: "btn btn-sm btn-block btn-success" %>
                 </td>
               </tr>
               <% end %>
