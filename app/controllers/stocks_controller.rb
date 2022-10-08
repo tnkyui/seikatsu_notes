@@ -12,7 +12,6 @@ class StocksController < ApplicationController
   end
 
   def create
-
     stock = Stock.new(stock_params)
     stock.user_id = current_user.id
     in_stock = current_user.stocks.find_by(name: params[:stock][:name])

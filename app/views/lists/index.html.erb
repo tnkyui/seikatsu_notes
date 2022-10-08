@@ -55,6 +55,7 @@
               <tr>
                 <td><%= shopping_list.name %></td>
                 <td>
+                  <%= link_to "購入", stocks_path(name: shopping_list.name), class: "btn btn-sm btn-info" %>
                   <%#= form_with model: @stock do |f| %>
                     <%#= f.hidden_field :name, :value => shopping_list.name %>
                     <%#= f.submit "購入", class: "btn btn-primary btn-sm" %>
