@@ -23,7 +23,7 @@
                   <% end %>
                 </td>
                 <td>
-                  <%= form_with model: @stock_id, url: stock_path(@stock_id.ids), method: :patch, data: { confirm: '候補欄から非表示にしますか？'} do |f| %>
+                  <%= form_with model: @stock_id, url: stock_path(@stock_id.ids), method: :patch, data: { confirm: "候補欄から非表示にしますか？\n※今後も在庫一覧ページからリストへ追加できます"} do |f| %>
                     <%= f.hidden_field :hidden_switch, :value => "false" %>
                     <button type="submit" class="bg-transparent destroy-btn">
                       <i class="fa fa-ban" aria-hidden="true"></i>

@@ -54,12 +54,12 @@
               <% @shopping_lists.each do |shopping_list| %>
               <tr>
                 <td><%= shopping_list.name %></td>
-                <!--<td>-->
-                <!--  <%#= form_with model: @stock do |f| %>-->
-                <!--    <%#= f.hidden_field :name, :value => shopping_list.name %>-->
-                <!--    <%#= f.submit "購入", class: "btn btn-primary btn-sm" %>-->
-                <!--  <%# end %>-->
-                <!--</td>-->
+                <td>
+                  <%#= form_with model: @stock do |f| %>
+                    <%#= f.hidden_field :name, :value => shopping_list.name %>
+                    <%#= f.submit "購入", class: "btn btn-primary btn-sm" %>
+                  <%# end %>
+                </td>
                 <td>
                   <%= link_to shopping_list_path(shopping_list.id), method: :delete, class: "destroy-btn" do %>
                     <i class="fa fa-trash" aria-hidden="true"></i>

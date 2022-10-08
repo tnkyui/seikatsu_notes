@@ -53,7 +53,6 @@ class StocksController < ApplicationController
 
   def stock_params
     params.require(:stock).permit(:name, :purchase_date, :percentage, :stock_amount, :alert_date, :alert_switch, :hidden_switch, :category)
-    # .merge(category: Stock.categories[params[:stock][:category]])
   end
 
   def category_params
