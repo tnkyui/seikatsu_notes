@@ -1,0 +1,42 @@
+<table class="table table-borderless mt-4 text-center">
+  <thead class="border-bottom border-dark">
+    <td class="pb-0 align-bottom">名前</td>
+    <td class="pb-0 align-bottom">残量</td>
+    <td class="pb-0 align-bottom">ストック</td>
+    <td></td>
+    <td></td>
+  </thead>
+  <tbody>
+    <% stocks.each do |stock| %>
+    <tr class="my-2">
+        <td class="text-left"><%= stock.name %></td>
+        <td>
+          <% if stock.percentage <= 20 && stock.stock_amount == 0 %>
+            <b class="text-danger"><%= stock.percentage %>%</b>
+          <% else %>
+            <%= stock.percentage %>%
+          <% end %>
+        </td>
+        <td><%= stock.stock_amount %></td>
+        <td style="width:0;">
+
+          <%= form_with model: shopping_list do |f| %>
+            <%= f.hidden_field :name, :value => stock.name %>
+
+            <% if shopping_list_name.include?(stock.name) %>
+              <%= f.submit "リスト追加済", class: "btn btn-secondary btn-sm", disabled: true %>
+            <% elsif stock.percentage <= 30 && stock.stock_amount == 0 %>
+              <%= f.submit "リスト追加", class: "btn btn-info btn-sm" %>
+            <% else %>
+              <%= f.submit "リスト追加", class: "btn btn-outline-secondary btn-sm", disabled: true %>
+            <% end %>
+
+          <% end %>
+        </td>
+        <td>
+          <u><i><%= link_to "Show", stock_path(stock.id), class: "text-dark small" %></i></u>
+        </td>
+    </tr>
+    <% end %>
+ </tbody>
+</table>
