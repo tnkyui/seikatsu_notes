@@ -75,51 +75,53 @@
           }
         </script>
       </div>
-
     </div>
+
     <div class="col-8 px-5 box-border">
-      <ul class="nav nav-tabs" id="myTab" role="tablist">
-        <li class="nav-item">
-          <a class="nav-link active" id="home-tab" href="#home" data-toggle="tab">ALL</a>
-        </li>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" id="meats_fish-tab" href="#meats_fish" data-toggle="tab">肉/魚</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" id="vegetables-tab" href="#vegetables" data-toggle="tab">野菜</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" id="spices-tab" href="#spices" data-toggle="tab">調味料</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" id="other_food-tab" href="#other_food" data-toggle="tab">他食品</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" id="drink-tab" href="#drink" data-toggle="tab">飲料</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">
-            消耗品
-          </a>
-          <ul class="dropdown-menu">
-            <a class="dropdown-item" id="kitchen_tools-tab" href="#kitchen_tools" data-toggle="tab">台所用品</a>
-            <a class="dropdown-item" id="cleaning-tab" href="#cleaning" data-toggle="tab">掃除</a>
-            <a class="dropdown-item" id="beauty-tab" href="#beauty" data-toggle="tab">美容</a>
-            <a class="dropdown-item" id="daily_necessities-tab" href="#daily_necessities" data-toggle="tab">日用品</a>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" id="other-tab" data-toggle="tab" href="#other" role="tab" aria-controls="other" aria-selected="false">
-            その他
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" id="not_set-tab" data-toggle="tab" href="#not_set" role="tab" aria-controls="not_set" aria-selected="false">
-            未設定
-          </a>
-        </li>
-      </ul>
+      <div class="row mt-3">
+        <ul class="nav nav-tabs navbar-dark" id="myTab" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" id="home-tab" href="#home" data-toggle="tab">全て</a>
+          </li>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="meats_fish-tab" href="#meats_fish" data-toggle="tab">肉/魚</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="vegetables-tab" href="#vegetables" data-toggle="tab">野菜</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="spices-tab" href="#spices" data-toggle="tab">調味料</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="other_food-tab" href="#other_food" data-toggle="tab">他食品</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="drink-tab" href="#drink" data-toggle="tab">飲料</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">
+              消耗品
+            </a>
+            <ul class="dropdown-menu">
+              <a class="dropdown-item" id="kitchen_tools-tab" href="#kitchen_tools" data-toggle="tab">台所用品</a>
+              <a class="dropdown-item" id="cleaning-tab" href="#cleaning" data-toggle="tab">掃除</a>
+              <a class="dropdown-item" id="beauty-tab" href="#beauty" data-toggle="tab">美容</a>
+              <a class="dropdown-item" id="daily_necessities-tab" href="#daily_necessities" data-toggle="tab">日用品</a>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="other-tab" data-toggle="tab" href="#other" role="tab" aria-controls="other" aria-selected="false">
+              その他
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="not_set-tab" data-toggle="tab" href="#not_set" role="tab" aria-controls="not_set" aria-selected="false">
+              未設定
+            </a>
+          </li>
+        </ul>
+      </div>
       <div class="tab-content" id="myTabContent">
         <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
           <%= render partial: 'tab', locals: { stocks: @stocks, shopping_list: @shopping_list, shopping_list_name: @shopping_list_name } %>
@@ -158,7 +160,6 @@
           <%= render partial: 'tab', locals: { stocks: @stock_not_set, shopping_list: @shopping_list, shopping_list_name: @shopping_list_name } %>
         </div>
       </div>
-
     </div>
   </div>
 </div>
