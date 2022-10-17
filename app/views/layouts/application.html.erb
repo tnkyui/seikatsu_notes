@@ -32,9 +32,10 @@
             <%= link_to "ログイン", new_user_session_path, class: "btn border-dark" %>
           </div>
           <% else %>
-          <div class="col text-right mt-3">
-            <%= link_to "LogOut", destroy_user_session_path, method: :delete, class: "btn border-dark" %>
-            <i class="fa-solid fa-gear fa-2x"></i>
+          <div class="col text-right mt-4">
+            <%= link_to users_information_edit_path, class: "btn btn-lg config-btn" do %>
+              <i class="fas fa-cogs fa-2x"></i>
+            <% end %>
           </div>
           <% end %>
 

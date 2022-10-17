@@ -108,9 +108,9 @@ button {
   font-size: 15px;
 }
 
-.destroy-btn:hover {
+.config-btn:hover, .destroy-btn:hover {
   color: black;
   display: inline-block;
   transform: scale(1.2);
-  transform-origin: center center 0;
+  transform-origin: center center;
 }
