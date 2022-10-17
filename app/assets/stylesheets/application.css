@@ -25,6 +25,9 @@ main {
   font-family: 'Zen Maru Gothic', sans-serif;
 }
 
+footer {
+  height: 200px;
+}
 /*.table td {*/
   /*vertical-align: middle;*/
 /*}*/

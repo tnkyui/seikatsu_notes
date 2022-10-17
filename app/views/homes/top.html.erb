@@ -1,11 +1,6 @@
 <div class="container">
-  <div class="row m-5">
-    <h2>
-      <i class="fa fa-exclamation-circle fa-lg" aria-hidden="true"></i> Seikatsu Notes <span class="small">とは</span>
-    </h2>
-  </div>
   <div class="row">
-    <div class="mx-auto">
+    <div class="mt-5 mx-auto">
       <h4><b>生活の「うっかり」をなくしませんか？</b></h4>
       <p>朝起きた時、スーパーでのショッピング中、料理中、、、<br>
       スケジュール帳やメモアプリに書くほどでもない<br>
@@ -13,6 +8,13 @@
     </div>
   </div>
   <div class="row">
-    
+    <%= image_tag 'seikatsu_notes_top1.png', class: "top-image1" %>
+    <%= image_tag 'seikatsu_notes_top2.png', class: "top-image2" %>
+  </div>
+  <div class="row">
+    <div class="top-btn mx-auto my-5">
+      <%= link_to "新規登録はこちら", new_user_registration_path, class: "btn border-dark btn-light" %>
+      <%= link_to "お試しされたい方はこちら", "/", class: "btn border-dark btn-light" %>
+    </div>
   </div>
 </div>
