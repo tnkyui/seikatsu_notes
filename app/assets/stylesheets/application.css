@@ -114,3 +114,11 @@ button {
   transform: scale(1.2);
   transform-origin: center center;
 }
+
+@media screen and (max-width:1025px) {
+  .navbar-button {
+    padding: 10px 40px; /* マステの内側の余白 */
+    font-size: 25px; /* 文字サイズ */
+    margin: 0px 5px 5px 10px;
+}
+}

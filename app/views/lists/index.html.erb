@@ -11,7 +11,7 @@
           <table class="table table-borderless">
             <tbody>
               <tr>
-                <td><%= f.text_field :name, placeholder: "かうもの", class: "form-control" %></td>
+                <td><%= f.text_field :name, placeholder: "買うもの", class: "form-control" %></td>
               </tr>
               <tr>
                 <td><%= f.submit "登録", class: "btn btn-primary btn-block" %></td>
@@ -71,7 +71,7 @@
             </tbody>
           </table>
         </div>
-        <div class="todo_list col-6 px-4">
+        <div class="todo_list col-6 px-4 px-lg-3">
           <h4 class="mt-4 text-center">
             <span class="maker">やることリスト</span>
           </h4>
@@ -84,12 +84,8 @@
                     <td><%= todo_list.start_date.strftime("%m/%d") %></td>
                     <td><%= todo_list.name %></td>
                     <td>
-
-                        <%= f.hidden_field :complete_switch, :value => "true" %>
-                        <%= f.submit "完了", class: "btn btn-sm btn-dark" %>
-
-
-
+                      <%= f.hidden_field :complete_switch, :value => "true" %>
+                      <%= f.submit "完了", class: "btn btn-sm btn-dark" %>
                     <details class="small">
                       <summary>繰り返す</summary>
                       <%= f.number_field :repeat_days, class: "form-control form-control-sm d-inline", min: 0, style: "width:45px" %>日後

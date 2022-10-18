@@ -19,13 +19,13 @@
                 <td>購入数</td>
                 <td>
                   <%= f.hidden_field :percentage, :value => 100 %>
-                  <%= f.number_field :stock_amount, class: "form-control", value: 1, min: 1 %>
+                  <%= f.number_field :stock_amount, class: "form-control form-control-sm", value: 1, min: 1 %>
                 </td>
               </tr>
               <tr>
                 <td>購入日</td>
                 <td>
-                  <%= f.date_field :purchase_date, class: "form-control", value: Date.current.strftime("%Y-%m-%d") %>
+                  <%= f.date_field :purchase_date, class: "form-control form-control-sm", value: Date.current.strftime("%Y-%m-%d") %>
                 </td>
               </tr>
               <tr>
@@ -85,22 +85,22 @@
           </li>
           </li>
           <li class="nav-item">
-            <a class="nav-link" id="meats_fish-tab" href="#meats_fish" data-toggle="tab">肉/魚</a>
+            <a class="nav-link px-2" id="meats_fish-tab" href="#meats_fish" data-toggle="tab">肉/魚</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" id="vegetables-tab" href="#vegetables" data-toggle="tab">野菜</a>
+            <a class="nav-link px-2" id="vegetables-tab" href="#vegetables" data-toggle="tab">野菜</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" id="spices-tab" href="#spices" data-toggle="tab">調味料</a>
+            <a class="nav-link px-2" id="spices-tab" href="#spices" data-toggle="tab">調味料</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" id="other_food-tab" href="#other_food" data-toggle="tab">他食品</a>
+            <a class="nav-link px-2" id="other_food-tab" href="#other_food" data-toggle="tab">他食品</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" id="drink-tab" href="#drink" data-toggle="tab">飲料</a>
+            <a class="nav-link px-2" id="drink-tab" href="#drink" data-toggle="tab">飲料</a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">
+            <a class="nav-link px-2 dropdown-toggle" data-toggle="dropdown" href="#">
               消耗品
             </a>
             <ul class="dropdown-menu">
@@ -111,12 +111,12 @@
             </ul>
           </li>
           <li class="nav-item">
-            <a class="nav-link" id="other-tab" data-toggle="tab" href="#other" role="tab" aria-controls="other" aria-selected="false">
+            <a class="nav-link px-2" id="other-tab" data-toggle="tab" href="#other" role="tab" aria-controls="other" aria-selected="false">
               その他
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" id="not_set-tab" data-toggle="tab" href="#not_set" role="tab" aria-controls="not_set" aria-selected="false">
+            <a class="nav-link px-2" id="not_set-tab" data-toggle="tab" href="#not_set" role="tab" aria-controls="not_set" aria-selected="false">
               未設定
             </a>
           </li>

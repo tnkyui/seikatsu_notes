@@ -1,7 +1,7 @@
 <div class="container">
 <%= render 'layouts/navbar' %>
   <div class="row">
-    <div class="col-4">
+    <div class="col-4 col-lg-5">
       <div class="box-border">
         <h4 class="mt-4">
           <span class="maker">在庫更新</span>
@@ -52,7 +52,6 @@
               </tr>
               <tr>
                 <td colspan="2">
-                  <%#= f.hidden_field :category, :value => @stock.category %>
                   <%= f.submit "更新", class: "btn btn-success btn-block" %>
                 </td>
               </tr>
@@ -63,7 +62,7 @@
       </div>
     </div>
 
-    <div class="col-8 box-border">
+    <div class="col-8 col-lg-7 box-border">
       <h4 class="mt-4">
         <span class="maker">在庫詳細修正</span>
       </h4>

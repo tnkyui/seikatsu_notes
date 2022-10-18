@@ -33,13 +33,21 @@
     font-family: 'Permanent Marker', cursive;
   }
 
-  .wday-0 {}
+  .current-month {
+    background-color: white;
+  }
+
+  .wday-0 {
+    background-color: #FFCCCC;
+  }
   .wday-1 {}
   .wday-2 {}
   .wday-3 {}
   .wday-4 {}
   .wday-5 {}
-  .wday-6 {}
+  .wday-6 {
+    background-color: #D7EEFF;
+  }
 
   .today {
     .date {
@@ -57,9 +65,7 @@
 
   .prev-month {}
   .next-month { }
-  .current-month {
-    background-color: white;
-  }
+
 
   .has-events {}
 }
@@ -126,5 +132,24 @@
     font-size: 20px;
     margin: 10px 30px;
     padding: 10px 30px;
+  }
+}
+
+@media screen and (max-width:993px) {
+  .col-box {
+    display: flex;
+    margin-bottom: 15px;
+  }
+  .shopping-box, .alert-box {
+    .maker {
+    font-size: 19px;
+    }
+    height: 100%;
+  }
+  .shopping-box {
+    margin-right: 15px;
+  }
+  .calendar {
+    margin-left: 15px;
   }
 }
