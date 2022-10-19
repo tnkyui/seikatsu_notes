@@ -16,6 +16,10 @@
 }
 
 .simple-calendar {
+  table {
+    table-layout: fixed;
+  }
+
   .calendar-title{
     font-size: 25px;
     font-family: 'Permanent Marker', cursive;
@@ -25,6 +29,7 @@
     font-size: 50px;
   }
   .day {
+    padding: 5px;
     font-size: 12px;
     height: 95px;
   }
@@ -77,6 +82,7 @@
 }
 
 .event-schedule-name {
+  max-width: 105%;
   font-size: 8px;
   color: black;
   white-space: nowrap;
@@ -84,6 +90,8 @@
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.5);
   padding: 2px 5px;
   margin-top: 4px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .stock-name {
@@ -152,4 +160,25 @@
   .calendar {
     margin-left: 15px;
   }
+}
+
+@media screen and (max-width:768px) { /* sm */
+  .shopping-box h4 {
+    line-height: 1rem;
+  }
+  .shopping-box, .alert-box {
+    .btn-sm-sm {
+      padding: 0.25rem 0.25rem;
+      font-size: 80%;
+      line-height: 1.5;
+      border-radius: 0.2rem;
+    }
+    .align-middle {
+      font-size: 80%;
+    }
+  }
+  .red-text {
+    font-size: 18px;
+  }
+
 }

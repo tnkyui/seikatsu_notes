@@ -26,7 +26,7 @@ main {
 }
 
 footer {
-  height: 200px;
+  height: 150px;
 }
 /*.table td {*/
   /*vertical-align: middle;*/
@@ -118,7 +118,17 @@ button {
 @media screen and (max-width:1200px) {  /* lg */
   .navbar-button {
     padding: 10px 40px; /* マステの内側の余白 */
-    font-size: 25px; /* 文字サイズ */
-    margin: 0px 5px 5px 10px;
+    font-size: 22px; /* 文字サイズ */
+    margin: 0px;
+  }
 }
+
+@media screen and (max-width:768px) { /* sm */
+   .navbar-button {
+    padding: 7px 30px; /* マステの内側の余白 */
+    font-size: 20px; /* 文字サイズ */
+  }
+  footer {
+    height: 0;
+  }
 }

@@ -14,3 +14,14 @@
   top: 10%;
   height: 80%;
 }
+
+@media screen and (max-width:992px) { /* md */
+  .shopping_list:after {
+    border-right: none;
+    border-bottom: 2px dashed #BBB;
+    top: 20%;
+    left: 10%;
+    width: 80%;
+    pointer-events: none;
+  }
+}

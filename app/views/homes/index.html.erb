@@ -2,7 +2,7 @@
 <%= render 'layouts/navbar' %>
   <div class="row">
     <div class="col-box col-xl-4 col-lg-5">
-      <div class="shopping-box box-border col-md-5 col-lg-12">
+      <div class="shopping-box box-border col-sm-5 col-lg-12">
         <h4 class="text-center mt-lg-4 mt-md-2">
           <span class="maker">Add to Shopping List?</span>
         </h4>
@@ -12,20 +12,21 @@
             <tbody>
               <% @stock_add_list.each do |stock| %>
               <tr>
-                <td><%= stock %></td>
-                <td class="text-right align-bottom">
-                  <u><i><%= link_to "Show", stock_path(@stock_id.ids), class: "text-dark" %></i></u>
+                <td>
+                  <%= link_to stock_path(@stock_id.ids), class: "btn btn-sm-sm text-dark" do %>
+                    <u><%= stock %></u>
+                  <% end %>
                 </td>
                 <td class="text-right">
                   <%= form_with model: @shopping_list do |f| %>
                     <%= f.hidden_field :name, :value => stock %>
-                    <%= f.submit" Add ", class: "btn btn-sm btn-info" %>
+                    <%= f.submit" Add ", class: "btn btn-sm btn-sm-sm btn-info" %>
                   <% end %>
                 </td>
                 <td>
                   <%= form_with model: @stock_id, url: stock_path(@stock_id.ids), method: :patch, data: { confirm: "候補欄から非表示にしますか？\n※今後も在庫一覧ページからリストへ追加できます"} do |f| %>
                     <%= f.hidden_field :hidden_switch, :value => "false" %>
-                    <button type="submit" class="btn btn-sm btn-block btn-danger">
+                    <button type="submit" class="btn btn-sm btn-sm-sm btn-block btn-danger">
                       <i class="fa fa-ban fa-lg" aria-hidden="true"></i>
                     </button>
                   <% end %>
@@ -37,7 +38,7 @@
         </div>
       </div>
 
-      <div class="alert-box box-border col-md-7 col-lg-12">
+      <div class="alert-box box-border col-sm-7 col-lg-12">
         <h4 class="text-center mt-lg-4 mt-md-2">
           <span class="maker">! ALEART !</span>
         </h4>
@@ -47,18 +48,20 @@
             <tbody>
               <% @stock_alert.each do |stock| %>
               <tr>
-                <td><%= stock.name %></td>
+                <td class="align-middle">
+                  <%= stock.name %>
+                </td>
                 <td class="small">
-                  購入から<span class="red-text"><%= (Date.current - stock.purchase_date).to_i %></span>日
+                  <span class="red-text"><%= (Date.current - stock.purchase_date).to_i %></span>日経過
                 </td>
                 <td class="text-right">
                   <%= form_with model: @stock_alert, url: stock_path(@stock_alert.ids), method: :patch do |f| %>
                     <%= f.hidden_field :alert_switch, :value => "false" %>
-                    <%= f.submit "Cold", class: "btn btn-sm btn-block btn-info" %>
+                    <%= f.submit "Cold", class: "btn btn-sm btn-sm-sm btn-block btn-info" %>
                   <% end %>
                 </td>
                 <td>
-                  <%= link_to "Edit", stock_path(stock.id), class: "btn btn-sm btn-block btn-success" %>
+                  <%= link_to "Edit", stock_path(stock.id), class: "btn btn-sm btn-sm-sm btn-block btn-success" %>
                 </td>
               </tr>
               <% end %>
