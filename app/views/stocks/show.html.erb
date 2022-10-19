@@ -6,16 +6,16 @@
         <h4 class="mt-4">
           <span class="maker">在庫更新</span>
         </h4>
-        <div class="form-group p-3">
+        <div class="form-group p-lg-3">
           <%= form_with model: @stock do |f| %>
           <table class="table table-borderless">
             <tbody>
               <tr>
-                <td>商品名</td>
-                <td><%= @stock.name %></td>
+                <td class="text-nowrap">商品名</td>
+                <td><b><%= @stock.name %></b></td>
               </tr>
               <tr>
-                <td>残量(%)</td>
+                <td>残量%</td>
                 <td>
                   <%= f.range_field :percentage, in: 0..100, step: 10, list: "datalist", class: "form-control-range" %>
                   <datalist id="datalist">
@@ -35,7 +35,7 @@
               </tr>
               <tr>
                 <td>ｽﾄｯｸ数</td>
-                <td><%= f.number_field :stock_amount, class: "form-control", min: 0 %></td>
+                <td><%= f.number_field :stock_amount, class: "form-control form-control-md-sm", min: 0 %></td>
               </tr>
               <tr>
                 <td colspan="2">
@@ -48,7 +48,7 @@
               </tr>
               <tr>
                 <td>購入日</td>
-                <td><%= f.date_field :purchase_date, class: "form-control" %></td>
+                <td><%= f.date_field :purchase_date, class: "form-control form-control-md-sm" %></td>
               </tr>
               <tr>
                 <td colspan="2">
