@@ -115,7 +115,7 @@ button {
   transform-origin: center center;
 }
 
-@media screen and (max-width:1025px) {
+@media screen and (max-width:1200px) {  /* lg */
   .navbar-button {
     padding: 10px 40px; /* マステの内側の余白 */
     font-size: 25px; /* 文字サイズ */
