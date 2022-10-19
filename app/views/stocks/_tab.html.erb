@@ -1,9 +1,9 @@
-<table class="table table-borderless mt-4 text-center">
+<table class="stock-index table table-borderless mt-4 text-center">
   <thead class="border-bottom border-dark">
     <td class="pb-0 align-bottom">名前</td>
     <td class="pb-0 align-bottom">残量</td>
     <td class="pb-0 align-bottom">ストック</td>
-    <td></td>
+    <td class="pb-0 align-bottom text-nowrap">リストへ追加</td>
     <td></td>
   </thead>
   <tbody>
@@ -24,11 +24,17 @@
             <%= f.hidden_field :name, :value => stock.name %>
 
             <% if shopping_list_name.include?(stock.name) %>
-              <%= f.submit "追加済", class: "btn btn-secondary btn-sm", disabled: true %>
+              <button type="submit" class="btn btn-secondary btn-sm" disabled="disabled">
+                <i class="fas fa-clipboard-check"></i>
+              </button>
             <% elsif stock.percentage <= 30 && stock.stock_amount == 0 %>
-              <%= f.submit "リスト追加", class: "btn btn-info btn-sm" %>
+              <button type="submit" class="btn btn-info btn-sm">
+                <i class="fas fa-clipboard-list"></i>
+              </button>
             <% else %>
-              <%= f.submit "リスト追加", class: "btn btn-outline-secondary btn-sm", disabled: true %>
+              <button type="submit" class="btn btn-outline-secondary btn-sm" disabled="disabled">
+                <i class="fas fa-clipboard-list"></i>
+              </button>
             <% end %>
 
           <% end %>
