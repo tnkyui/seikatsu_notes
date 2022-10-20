@@ -137,8 +137,8 @@
 
 .top-btn {
   .btn {
-    font-size: 20px;
-    margin: 10px 30px;
+    font-size: 15px;
+    margin: 10px 20px;
     padding: 10px 30px;
   }
 }
@@ -163,12 +163,18 @@
 }
 
 @media screen and (max-width:768px) { /* sm */
+  .top-image1, .top-image2 {
+    width: 100%;
+  }
   .shopping-box h4 {
     line-height: 1rem;
   }
+  .alert-box h4 {
+    margin-bottom: 15px;
+  }
   .shopping-box, .alert-box {
     .btn-sm-sm {
-      padding: 0.25rem 0.25rem;
+      padding: 0.15rem 0.15rem;
       font-size: 80%;
       line-height: 1.5;
       border-radius: 0.2rem;

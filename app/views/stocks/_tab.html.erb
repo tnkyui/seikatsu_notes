@@ -9,7 +9,11 @@
   <tbody>
     <% stocks.each do |stock| %>
     <tr class="my-2">
-        <td class="text-left"><%= stock.name %></td>
+        <td class="text-left">
+          <%= link_to stock_path(stock.id), class: "text-secondary" do %>
+            <%= stock.name %>
+          <% end %>
+        </td>
         <td>
           <% if stock.percentage <= 20 && stock.stock_amount == 0 %>
             <b class="text-danger"><%= stock.percentage %>%</b>
@@ -38,9 +42,6 @@
             <% end %>
 
           <% end %>
-        </td>
-        <td>
-          <u><i><%= link_to "Show", stock_path(stock.id), class: "text-dark small" %></i></u>
         </td>
     </tr>
     <% end %>

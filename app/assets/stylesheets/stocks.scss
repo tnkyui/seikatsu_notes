@@ -17,6 +17,12 @@
   font-size: 13px;
 }
 
+.stock-index {
+  a {
+    border-bottom: 0.5px solid #6c757d;
+  }
+}
+
 @media screen and (max-width:992px) { /* md */
   .form-group {
     td {
@@ -46,5 +52,9 @@
 }
 
 @media screen and (max-width:768px) { /* sm */
-
+  .stock-index {
+    thead {
+      display: none;
+    }
+  }
 }
