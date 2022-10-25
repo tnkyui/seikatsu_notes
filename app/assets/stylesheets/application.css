@@ -37,12 +37,6 @@ button {
   outline: none;
 }
 
-/*.box-border {*/
-  /*border: solid 2px #666;*/
-  /*border-radius: 30px / 40px;*/
-
-/*}*/
-
 .box-border {
   position: relative;
   border: solid 2px #666;
