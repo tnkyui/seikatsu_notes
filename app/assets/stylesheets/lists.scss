@@ -25,3 +25,19 @@
     pointer-events: none;
   }
 }
+
+@media screen and (max-width:768px) { /* sm */
+  .shopping_list:after {
+    border-bottom: none;
+    border-right: 2px dashed #BBB;
+    left: unset;
+    top: 10%;
+  }
+  .shopping_list, .todo_list {
+    font-size: 85%;
+    .btn {
+      white-space: nowrap;
+      font-size: 80%;
+    }
+  }
+}

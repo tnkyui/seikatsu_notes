@@ -1,51 +1,56 @@
 <div class="container">
 <%= render 'layouts/navbar' %>
   <div class="row">
-    <div class="col-4">
+    <div class="col-md-4">
       <div class="box-border">
-        <h4 class="mt-4">
-          <span class="maker">買うもの追加</span>
-        </h4>
-        <div class="form-group p-lg-3">
-          <%= form_with model: @shopping_list do |f| %>
-          <table class="table table-borderless">
-            <tbody>
-              <tr>
-                <td><%= f.text_field :name, placeholder: "買うもの", class: "form-control" %></td>
-              </tr>
-              <tr>
-                <td><%= f.submit "登録", class: "btn btn-primary btn-block" %></td>
-              </tr>
-            </tbody>
-          </table>
-          <% end %>
-        </div>
-
-        <h4 class="mt-4">
-          <span class="maker">やること追加</span>
-        </h4>
-        <div class="form-group p-lg-3">
-          <%= form_with model: @todo_list do |f| %>
-          <table class="table table-borderless">
-            <tbody>
-              <tr>
-                <td><%= f.text_field :name, placeholder: "やること", class: "form-control" %></td>
-              </tr>
-              <tr>
-                <td><%= f.date_field :start_date, class: "form-control form-control-sm" %></td>
-              </tr>
-              <tr>
-                <td><%= f.submit "登録", class: "btn btn-primary btn-block" %></td>
-              </tr>
-            </tbody>
-          </table>
-          <% end %>
+        <div class="form-space">
+          <div class="form-item">
+            <h4 class="mt-md-4">
+              <span class="maker">買うもの追加</span>
+            </h4>
+            <div class="form-group p-lg-3">
+              <%= form_with model: @shopping_list do |f| %>
+              <table class="table table-borderless">
+                <tbody>
+                  <tr>
+                    <td><%= f.text_field :name, placeholder: "買うもの", class: "form-control" %></td>
+                  </tr>
+                  <tr>
+                    <td><%= f.submit "登録", class: "btn btn-primary btn-block" %></td>
+                  </tr>
+                </tbody>
+              </table>
+              <% end %>
+            </div>
+          </div>
+          <div class="form-item">
+            <h4 class="mt-md-4">
+              <span class="maker">やること追加</span>
+            </h4>
+            <div class="form-group p-lg-3">
+              <%= form_with model: @todo_list do |f| %>
+              <table class="table table-borderless">
+                <tbody>
+                  <tr>
+                    <td><%= f.text_field :name, placeholder: "やること", class: "form-control" %></td>
+                  </tr>
+                  <tr>
+                    <td><%= f.date_field :start_date, class: "form-control form-control-sm" %></td>
+                  </tr>
+                  <tr>
+                    <td><%= f.submit "登録", class: "btn btn-primary btn-block" %></td>
+                  </tr>
+                </tbody>
+              </table>
+              <% end %>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    <div class="col-8 box-border">
+    <div class="col-md-8 box-border">
       <div class="row h-100">
-        <div class="shopping_list col-lg-6 col-12 px-5">
+        <div class="shopping_list col-5 col-lg-6 col-md-12 px-md-5 px-2">
           <h4 class="mt-4 text-center">
             <span class="maker">買うものリスト</span>
           </h4>
@@ -67,7 +72,7 @@
             </tbody>
           </table>
         </div>
-        <div class="todo_list col-lg-6 col-12 px-xl-4 px-3">
+        <div class="todo_list col-7 col-lg-6 col-md-12 px-xl-4 px-2">
           <h4 class="mt-4 text-center">
             <span class="maker">やることリスト</span>
           </h4>
@@ -82,9 +87,9 @@
                     <td>
                       <%= f.hidden_field :complete_switch, :value => "true" %>
                       <%= f.submit "完了", class: "btn btn-sm btn-dark" %>
-                    <details class="small">
-                      <summary>繰り返す</summary>
-                      <%= f.number_field :repeat_days, class: "form-control form-control-sm d-inline", min: 0, style: "width:45px" %>日後
+                    <details class="small text-nowrap">
+                      <summary>繰り返し</summary>
+                      <%= f.number_field :repeat_days, class: "form-control form-control-sm d-inline", min: 0, style: "width:45px" %>日
                     </details>
                     </td>
                     <td>

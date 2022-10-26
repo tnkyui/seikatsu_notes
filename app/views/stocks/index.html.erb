@@ -3,7 +3,7 @@
   <div class="row">
     <div class="col-md-4">
       <div class="box-border">
-        <h4 class="mt-4">
+        <h4 class="mt-md-4">
           <span class="maker">在庫登録</span>
         </h4>
         <div class="form-group p-lg-3">
@@ -41,14 +41,20 @@
             <table class="table table-borderless">
               <tbody>
                 <tr>
-                  <td colspan="2" class="pl-sm-4">
-                    アラート設定<br>
+                  <td colspan="2">
+                    <アラート設定>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
                     <%= f.radio_button :alert_setting, 2 %>
                     <%= f.label :alert_setting, "2日後", value: 2 %><br>
                     <%= f.radio_button :alert_setting, 7 %>
                     <%= f.label :alert_setting, "1週間後", value: 7 %><br>
                     <%= f.radio_button :alert_setting, 14 %>
                     <%= f.label :alert_setting, "2週間後", value: 14 %><br>
+                  </td>
+                  <td>
                     <%= f.radio_button :alert_setting, 21 %>
                     <%= f.label :alert_setting, "3週間後", value: 21 %><br>
                     <%= f.radio_button :alert_setting, 28 %>

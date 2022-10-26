@@ -58,15 +58,14 @@
     }
   }
   .box-border {
-    form {
+    form, .form-space {
       display: flex;
     }
     .form-item {
       width: 80%;
-      br:nth-child(even) {
-        display: none;
-        margin-left: 20px;
-      }
     }
+  }
+  .maker {
+    font-size: 80%;
   }
 }

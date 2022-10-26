@@ -26,10 +26,10 @@
           </div>
 
           <% if !user_signed_in? %>
-          <div class="col m-5">
-            <%= link_to "初めての方は", new_user_registration_path, class: "btn border-dark" %>
-            <%= link_to "お試しモード", "/", class: "btn border-dark" %>
+          <div class="col header-item mt-4 m-lg-5 mt-md-5">
+            <%= link_to "新規登録", new_user_registration_path, class: "btn border-dark" %>
             <%= link_to "ログイン", new_user_session_path, class: "btn border-dark" %>
+            <%= link_to "お試し", "/", class: "btn border-dark" %>
           </div>
           <% else %>
           <div class="col text-right mt-3 mt-md-4">

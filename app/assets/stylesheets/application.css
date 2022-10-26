@@ -117,8 +117,17 @@ button {
   }
 }
 
+@media screen and (max-width:992px) {  /* md */
+  .header-item .btn {
+    font-size: 80%;
+  }
+}
+
 @media screen and (max-width:768px) { /* sm */
-   .navbar-button {
+  header img {
+    width: 100%;
+  }
+  .navbar-button {
     padding: 7px 30px; /* マステの内側の余白 */
     font-size: 20px; /* 文字サイズ */
   }

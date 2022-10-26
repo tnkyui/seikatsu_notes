@@ -1,68 +1,75 @@
 <div class="container">
 <%= render 'layouts/navbar' %>
   <div class="row">
-    <div class="col-4 col-lg-5">
+    <div class="col-md-4 col-lg-5">
       <div class="box-border">
-        <h4 class="mt-4">
+        <h4 class="mt-md-4">
           <span class="maker">在庫更新</span>
         </h4>
         <div class="form-group p-lg-3">
           <%= form_with model: @stock do |f| %>
-          <table class="table table-borderless">
-            <tbody>
-              <tr>
-                <td class="text-nowrap">商品名</td>
-                <td><b><%= @stock.name %></b></td>
-              </tr>
-              <tr>
-                <td>残量%</td>
-                <td>
-                  <%= f.range_field :percentage, in: 0..100, step: 10, list: "datalist", class: "form-control-range" %>
-                  <datalist id="datalist">
-                    <option value="0">
-                    <option value="10">
-                    <option value="20">
-                    <option value="30">
-                    <option value="40">
-                    <option value="50">
-                    <option value="60">
-                    <option value="70">
-                    <option value="80">
-                    <option value="90">
-                    <option value="100">
-                  </datalist>
-                </td>
-              </tr>
-              <tr>
-                <td>ｽﾄｯｸ数</td>
-                <td><%= f.number_field :stock_amount, class: "form-control form-control-md-sm", min: 0 %></td>
-              </tr>
-              <tr>
-                <td colspan="2">
-                  <p class="border small p-3 bg-light">
-                    <i><u>NOTE</u></i><br>
-                    残量： 0~100%で設定<br>
-                    ストック： 未開封で保管している数を設定<br>
-                  </p>
-                </td>
-              </tr>
-              <tr>
-                <td>購入日</td>
-                <td><%= f.date_field :purchase_date, class: "form-control form-control-md-sm" %></td>
-              </tr>
-              <tr>
-                <td colspan="2">
-                  <%= f.submit "更新", class: "btn btn-success btn-block" %>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+          <div class="form-item">
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td class="text-nowrap">商品名</td>
+                  <td><span style="font-size:16px;font-weight:bold"><%= @stock.name %></span></td>
+                </tr>
+                <tr>
+                  <td>残量%</td>
+                  <td>
+                    <%= f.range_field :percentage, in: 0..100, step: 10, list: "datalist", class: "form-control-range" %>
+                    <datalist id="datalist">
+                      <option value="0">
+                      <option value="10">
+                      <option value="20">
+                      <option value="30">
+                      <option value="40">
+                      <option value="50">
+                      <option value="60">
+                      <option value="70">
+                      <option value="80">
+                      <option value="90">
+                      <option value="100">
+                    </datalist>
+                  </td>
+                </tr>
+                <tr>
+                  <td>ｽﾄｯｸ数</td>
+                  <td><%= f.number_field :stock_amount, class: "form-control form-control-md-sm", min: 0 %></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="form-item">
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td colspan="2" class="py-0">
+                    <p class="border small p-md-3 p-2 bg-light">
+                      残量： 0~100%で設定<br>
+                      ストック： 未開封で保管している数を設定<br>
+                    </p>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="text-nowrap">購入日</td>
+                  <td><%= f.date_field :purchase_date, class: "form-control form-control-md-sm" %></td>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    <%= f.submit "更新", class: "btn btn-success btn-block" %>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
           <% end %>
         </div>
       </div>
     </div>
 
-    <div class="col-8 col-lg-7 box-border">
+    <div class="col-md-8 col-lg-7 box-border">
       <h4 class="mt-4">
         <span class="maker">在庫詳細修正</span>
       </h4>
