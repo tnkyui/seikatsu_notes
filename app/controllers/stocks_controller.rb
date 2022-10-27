@@ -1,18 +1,18 @@
 class StocksController < ApplicationController
   def index
     @stock = Stock.new
-    @stocks = current_user.stocks.all
-    @stock_meats_fish = @stocks.where(category: 0)
-    @stock_vegetables = @stocks.where(category: 1)
-    @stock_spices = @stocks.where(category: 2)
-    @stock_drink = @stocks.where(category: 3)
-    @stock_other_food = @stocks.where(category: 30)
-    @stock_kitchen_tools = @stocks.where(category: 40)
-    @stock_cleaning = @stocks.where(category: 50)
-    @stock_beauty = @stocks.where(category: 60)
-    @stock_daily_necessities = @stocks.where(category: 70)
-    @stock_other = @stocks.where(category: 98)
-    @stock_not_set = @stocks.where(category: 99)
+    @stocks = current_user.stocks.page(params[:page]).per(10)
+    @stock_meats_fish = @stocks.where(category: 0).page(params[:page]).per(10)
+    @stock_vegetables = @stocks.where(category: 1).page(params[:page]).per(10)
+    @stock_spices = @stocks.where(category: 2).page(params[:page]).per(10)
+    @stock_drink = @stocks.where(category: 3).page(params[:page]).per(10)
+    @stock_other_food = @stocks.where(category: 30).page(params[:page]).per(10)
+    @stock_kitchen_tools = @stocks.where(category: 40).page(params[:page]).per(10)
+    @stock_cleaning = @stocks.where(category: 50).page(params[:page]).per(10)
+    @stock_beauty = @stocks.where(category: 60).page(params[:page]).per(10)
+    @stock_daily_necessities = @stocks.where(category: 70).page(params[:page]).per(10)
+    @stock_other = @stocks.where(category: 98).page(params[:page]).per(10)
+    @stock_not_set = @stocks.where(category: 99).page(params[:page]).per(10)
     @shopping_list = ShoppingList.new
     # 以下リストへ追加ボタン
     @shopping_list_name = current_user.shopping_lists.pluck(:name)
