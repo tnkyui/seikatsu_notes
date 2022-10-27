@@ -86,7 +86,7 @@
             </button>
             <% end %>
           <% elsif event.class != Stock && event.complete_switch == false %>
-            <%= form_with model: @todo_lists, url: todo_list_path(event.id), method: :patch do |f| %>
+            <%= form_with model: @todo_lists, url: todo_list_path(event.id), method: :patch, class: "calendar-name" do |f| %>
               <%= f.hidden_field :complete_switch, :value => "true" %>
               <%= f.hidden_field :repeat_days, :value => event.repeat_days %>
               <button type="submit" class="event-schedule-name todolist-name">
@@ -102,7 +102,6 @@
         <% end %>
 
       <% end %>
-
     </div>
   </div>
 </div>

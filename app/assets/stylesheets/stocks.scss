@@ -58,7 +58,7 @@
     }
   }
   .box-border {
-    form, .form-space {
+    form:not(.calendar-name), .form-space {
       display: flex;
     }
     .form-item {

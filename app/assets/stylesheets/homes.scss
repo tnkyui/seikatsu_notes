@@ -83,7 +83,7 @@
 
 .event-schedule-name {
   max-width: 105%;
-  font-size: 8px;
+  font-size: 10px;
   color: black;
   white-space: nowrap;
   border-radius: 5px;
@@ -190,6 +190,10 @@
   .red-text {
     font-size: 18px;
   }
+  .event-schedule-name {
+    padding: 1px 6px;
+    text-overflow: unset;
+  }
 
 }
 
@@ -203,5 +207,37 @@
   .top-btn {
     text-align: center;
   }
-  
+  .col-box {
+    display: contents;
+  }
+  .shopping-box, .alert-box {
+    margin: 0px 15px;
+  }
+
+  .calendar {
+    margin-right: 15px;
+  }
+  .event-schedule-name {
+    transform: scale(0.9);
+    transform-origin: left top;
+    max-width: 120%;
+    padding: 0px 3px;
+  }
+  .date {
+    font-size: 80%;
+  }
+  .simple-calendar {
+    .day {
+      height: 60px;
+    }
+    .calendar-title{
+      font-size: 20px;
+    }
+    .month_number {
+      font-size: 40px;
+    }
+    th {
+      font-size: 80%;
+    }
+  }
 }

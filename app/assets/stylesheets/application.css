@@ -140,7 +140,7 @@ button {
   .header-item .btn {
     font-size: 70%
   }
-  .header-item .btn:nth-child(1),.btn:nth-child(3) {
+  .header-item .btn:nth-child(1), .header-item .btn:nth-child(3) {
     display: none;
   }
   .fa-cogs {
