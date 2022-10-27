@@ -25,7 +25,11 @@ class StocksController < ApplicationController
   def create
     stock = Stock.new(stock_params)
     stock.user_id = current_user.id
+    in_list = current_user.shopping_lists.find_by(name: params[:stock][:name])
     in_stock = current_user.stocks.find_by(name: params[:stock][:name])
+    if in_list.present?  #もし買い物リストあるものを購入したら
+      in_list.destroy
+    end
     if in_stock.present?  #もしｽﾄｯｸに同じ名称の在庫があったら
       in_stock.stock_amount += params[:stock][:stock_amount].to_i
       in_stock.purchase_date = params[:stock][:purchase_date]
@@ -37,7 +41,6 @@ class StocksController < ApplicationController
       in_stock.save
       redirect_to stock_path(in_stock.id)
     elsif stock.alert_date = stock.purchase_date.to_time.to_datetime + params[:stock][:alert_setting].to_i
-      # stock.category = params[:stock][:category].values
       stock.stock_amount = params[:stock][:stock_amount].to_i - 1
         if params[:stock][:alert_setting] == "0"
           stock.update(alert_switch: "false")
