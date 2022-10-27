@@ -135,3 +135,24 @@ button {
     height: 0;
   }
 }
+
+@media screen and (max-width:576px) { /* Extra Small */
+  .header-item .btn {
+    font-size: 70%
+  }
+  .header-item .btn:nth-child(1),.btn:nth-child(3) {
+    display: none;
+  }
+  .fa-cogs {
+    font-size: 130%
+  }
+  .navbar-button {
+    box-shadow: 0 0 2px rgba(0,0,0,.2);
+    transform: rotate(0deg); /* マステを回転させる */
+    padding: 5px 25px; /* マステの内側の余白 */
+    font-size: 20px; /* 文字サイズ */
+  }
+  .navbar-list {
+    margin: 0px 10px;
+  }
+}
