@@ -41,3 +41,14 @@
     }
   }
 }
+
+@media screen and (max-width:576px) { /* Extra Small */
+  .shopping_list:after {
+    border-right: none;
+    border-bottom: 2px dashed #BBB;
+    top: 20%;
+    left: 10%;
+    width: 80%;
+    pointer-events: none;
+  }
+}

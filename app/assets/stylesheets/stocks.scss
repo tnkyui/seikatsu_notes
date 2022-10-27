@@ -69,3 +69,13 @@
     font-size: 80%;
   }
 }
+@media screen and (max-width:576px) { /* Extra Small */
+  .box-border {
+    form:not(.calendar-name), .form-space {
+      display: contents;
+    }
+    .form-item {
+      width: 100%;
+    }
+  }
+}
