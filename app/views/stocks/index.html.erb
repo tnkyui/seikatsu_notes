@@ -6,6 +6,7 @@
         <h4 class="mt-md-4">
           <span class="maker">在庫登録</span>
         </h4>
+        <%= render 'layouts/error', model: @stock %>
         <div class="form-group p-lg-3">
           <%= form_with model: @stock do |f| %>
           <div class="form-item">
