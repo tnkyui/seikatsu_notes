@@ -139,41 +139,102 @@
       <div class="tab-content" id="myTabContent">
         <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
           <%= render partial: 'tab', locals: { stocks: @stocks, shopping_list: @shopping_list, shopping_list_name: @shopping_list_name } %>
+          <div class="row">
+            <div class="mx-auto">
+              <%= paginate @stocks, :param_name => 'stocks_page' %>
+            </div>
+          </div>
         </div>
         <div class="tab-pane fade" id="meats_fish" role="tabpanel" aria-labelledby="meats_fish-tab">
           <%= render partial: 'tab', locals: { stocks: @stock_meats_fish, shopping_list: @shopping_list, shopping_list_name: @shopping_list_name } %>
+          <div class="row">
+            <div class="mx-auto">
+              <%= paginate @stock_meats_fish, :param_name => 'meats_fish_page' %>
+            </div>
+          </div>
         </div>
         <div class="tab-pane fade" id="vegetables" role="tabpanel" aria-labelledby="vegetables-tab">
           <%= render partial: 'tab', locals: { stocks: @stock_vegetables, shopping_list: @shopping_list, shopping_list_name: @shopping_list_name } %>
+          <div class="row">
+            <div class="mx-auto">
+              <%= paginate @stock_vegetables, :param_name => 'vegetables_page' %>
+            </div>
+          </div>
         </div>
         <div class="tab-pane fade" id="spices" role="tabpanel" aria-labelledby="spices-tab">
           <%= render partial: 'tab', locals: { stocks: @stock_spices, shopping_list: @shopping_list, shopping_list_name: @shopping_list_name } %>
+          <div class="row">
+            <div class="mx-auto">
+              <%= paginate @stock_spices, :param_name => 'spices_page' %>
+            </div>
+          </div>
         </div>
         <div class="tab-pane fade" id="other_food" role="tabpanel" aria-labelledby="other_food-tab">
           <%= render partial: 'tab', locals: { stocks: @stock_other_food, shopping_list: @shopping_list, shopping_list_name: @shopping_list_name } %>
+          <div class="row">
+            <div class="mx-auto">
+              <%= paginate @stock_other_food, :param_name => 'other_food_page' %>
+            </div>
+          </div>
         </div>
         <div class="tab-pane fade" id="drink" role="tabpanel" aria-labelledby="drink-tab">
           <%= render partial: 'tab', locals: { stocks: @stock_drink, shopping_list: @shopping_list, shopping_list_name: @shopping_list_name } %>
+          <div class="row">
+            <div class="mx-auto">
+              <%= paginate @stock_drink, :param_name => 'drink_page' %>
+            </div>
+          </div>
         </div>
         <div class="tab-pane fade" id="kitchen_tools" role="tabpanel" aria-labelledby="kitchen_tools-tab">
           <%= render partial: 'tab', locals: { stocks: @stock_kitchen_tools, shopping_list: @shopping_list, shopping_list_name: @shopping_list_name } %>
+          <div class="row">
+            <div class="mx-auto">
+              <%= paginate @stock_kitchen_tools, :param_name => 'kitchen_tools_page' %>
+            </div>
+          </div>
         </div>
         <div class="tab-pane fade" id="cleaning" role="tabpanel" aria-labelledby="cleaning-tab">
           <%= render partial: 'tab', locals: { stocks: @stock_cleaning, shopping_list: @shopping_list, shopping_list_name: @shopping_list_name } %>
+        <div class="row">
+            <div class="mx-auto">
+              <%= paginate @stock_cleaning, :param_name => 'cleaning_page' %>
+            </div>
+          </div>
         </div>
         <div class="tab-pane fade" id="beauty" role="tabpanel" aria-labelledby="beauty-tab">
           <%= render partial: 'tab', locals: { stocks: @stock_beauty, shopping_list: @shopping_list, shopping_list_name: @shopping_list_name } %>
+          <div class="row">
+            <div class="mx-auto">
+              <%= paginate @stock_beauty, :param_name => 'beauty_page' %>
+            </div>
+          </div>
         </div>
         <div class="tab-pane fade" id="daily_necessities" role="tabpanel" aria-labelledby="daily_necessities-tab">
           <%= render partial: 'tab', locals: { stocks: @stock_daily_necessities, shopping_list: @shopping_list, shopping_list_name: @shopping_list_name } %>
+          <div class="row">
+            <div class="mx-auto">
+              <%= paginate @stock_daily_necessities, :param_name => 'daily_necessities_page' %>
+            </div>
+          </div>
         </div>
         <div class="tab-pane fade" id="other" role="tabpanel" aria-labelledby="other-tab">
           <%= render partial: 'tab', locals: { stocks: @stock_other, shopping_list: @shopping_list, shopping_list_name: @shopping_list_name } %>
+          <div class="row">
+            <div class="mx-auto">
+              <%= paginate @stock_other, :param_name => 'other_page' %>
+            </div>
+          </div>
         </div>
         <div class="tab-pane fade" id="not_set" role="tabpanel" aria-labelledby="not_set-tab">
           <%= render partial: 'tab', locals: { stocks: @stock_not_set, shopping_list: @shopping_list, shopping_list_name: @shopping_list_name } %>
+          <div class="row">
+            <div class="mx-auto">
+              <%= paginate @stock_not_set, :param_name => 'not_set_page' %>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
+  <%= render 'layouts/navbar_bottom' %>
 </div>
