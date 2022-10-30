@@ -1,10 +1,16 @@
 class TodoListsController < ApplicationController
 
   def create
+    @shopping_lists = current_user.shopping_lists.page(params[:page]).per(10)
+    @todo_lists = current_user.todo_lists.order(:start_date).page(params[:page]).per(10)
+
     @todo_list = TodoList.new(todo_list_params)
     @todo_list.user_id = current_user.id
-    @todo_list.save
-    redirect_to request.referer
+    if @todo_list.save
+      redirect_to request.referer, notice: "リストを更新しました"
+    else
+      redirect_to request.referer, alert: "入力内容に不備があります"
+    end
   end
 
   def update
@@ -18,13 +24,13 @@ class TodoListsController < ApplicationController
       repeat_todo_list.save
     end
     @todo_list.update(todo_list_params)
-    redirect_to request.referer
+    redirect_to request.referer, notice: "リストを更新しました"
   end
 
   def destroy
     todo_list = TodoList.find(params[:id])
     todo_list.destroy
-    redirect_to request.referer
+    redirect_to request.referer, notice: "リストを削除しました"
   end
 
   private

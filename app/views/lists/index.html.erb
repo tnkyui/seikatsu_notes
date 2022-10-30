@@ -8,6 +8,11 @@
             <h4 class="mt-md-4">
               <span class="maker">買うもの追加</span>
             </h4>
+            <% if flash[:alert] %>
+            <ul>
+              <li class="alert-danger"><%= alert %></li>
+            </ul>
+            <% end %>
             <div class="form-group p-lg-3">
               <%= form_with model: @shopping_list do |f| %>
               <table class="table table-borderless">
@@ -27,6 +32,11 @@
             <h4 class="mt-md-4">
               <span class="maker">やること追加</span>
             </h4>
+            <% if flash[:alert] %>
+            <ul>
+              <li class="alert-danger"><%= alert %></li>
+            </ul>
+            <% end %>
             <div class="form-group p-lg-3">
               <%= form_with model: @todo_list do |f| %>
               <table class="table table-borderless">

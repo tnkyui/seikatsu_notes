@@ -6,8 +6,6 @@ class ListsController < ApplicationController
     @shopping_lists = @user.shopping_lists.page(params[:page]).per(10)
     @todo_list = TodoList.new
     @todo_lists = @user.todo_lists.order(:start_date).page(params[:page]).per(10)
-
-    @stock = Stock.new
   end
 
 end
