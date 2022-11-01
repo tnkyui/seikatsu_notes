@@ -6,7 +6,9 @@
       </h4>
       <div class="my-5 text-center">
         <%= link_to "ログアウトする", destroy_user_session_path, method: :delete, class: "btn border-dark m-3" %><br class="br-mobile">
-        <%= link_to "退会する", users_destroy_path, method: :delete, class: "btn btn-danger m-3", "data-confirm" => "本当に退会しますか？\n全ての情報は削除され、復元できなくなります" %>
+        <% unless @user.email == "guest@example.com" %>
+          <%= link_to "退会する", users_destroy_path, method: :delete, class: "btn btn-danger m-3", "data-confirm" => "本当に退会しますか？\n全ての情報は削除され、復元できなくなります" %>
+        <% end %>
       </div>
     </div>
   </div>

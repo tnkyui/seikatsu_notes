@@ -37,6 +37,10 @@ button {
   outline: none;
 }
 
+.alert-danger, .alert-primary {
+  font-family: 'Kiwi Maru', serif;
+}
+
 .box-border {
   position: relative;
   border: solid 2px #666;

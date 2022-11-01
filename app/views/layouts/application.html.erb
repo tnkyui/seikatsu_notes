@@ -14,15 +14,16 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Patrick+Hand&family=Permanent+Marker&family=Zen+Maru+Gothic&family=Hachi+Maru+Pop&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Patrick+Hand&family=Permanent+Marker&family=Zen+Maru+Gothic&family=Hachi+Maru+Pop&family=Kiwi+Maru:wght@300&display=swap" rel="stylesheet">
   </head>
 
   <body>
     <header>
+      <div class="w-100 alert-primary">
+        <div class="text-center"><%= notice %></div>
+      </div>
       <div class="container">
-        <div class="row alert-primary">
-          <div class="mx-auto"><%= notice %></div>
-        </div>
+
         <div class="row">
           <div class="col mx-md-5 mt-3 mb-1 my-md-4 my-xl-5">
             <%= link_to image_tag('seikatsu_notes_logo.png'), home_path %>
@@ -32,11 +33,11 @@
           <div class="col header-item text-right mt-3 mt-sm-4 m-lg-5 mt-md-5">
             <%= link_to "新規登録", new_user_registration_path, class: "btn border-dark" %>
             <%= link_to "ログイン", new_user_session_path, class: "btn border-dark" %>
-            <%= link_to "お試し", "/", class: "btn border-dark" %>
+            <%= link_to "お試し", users_guest_sign_in_path, class: "btn border-dark", method: :post %>
           </div>
           <% else %>
           <div class="col text-right mt-3 mt-md-4">
-            <%= link_to users_information_edit_path, class: "btn btn-lg config-btn" do %>
+            <%= link_to users_information_path, class: "btn btn-lg config-btn" do %>
               <i class="fas fa-cogs fa-2x"></i>
             <% end %>
           </div>

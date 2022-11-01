@@ -3,9 +3,6 @@ class UsersController < ApplicationController
     @user = current_user
   end
 
-  def update
-  end
-
   def destroy
     user = User.find(current_user.id)
     user.destroy
