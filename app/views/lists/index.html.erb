@@ -42,13 +42,17 @@
               <table class="table table-borderless">
                 <tbody>
                   <tr>
-                    <td><%= f.text_field :name, placeholder: "やること", class: "form-control" %></td>
+                    <td colspan="2"><%= f.text_field :name, placeholder: "やること", class: "form-control" %></td>
                   </tr>
                   <tr>
-                    <td><%= f.date_field :start_date, class: "form-control form-control-sm" %></td>
+                    <td colspan="2"><%= f.date_field :start_date, class: "form-control form-control-sm" %></td>
                   </tr>
                   <tr>
-                    <td><%= f.submit "登録", class: "btn btn-primary btn-block" %></td>
+                    <td class="text-nowrap">繰り返し設定</td>
+                    <td><%= f.number_field :repeat_days, class: "form-control form-control-sm d-inline w-75", value: 0, min: 0 %>日</td>
+                  </tr>
+                  <tr>
+                    <td colspan="2"><%= f.submit "登録", class: "btn btn-primary btn-block" %></td>
                   </tr>
                 </tbody>
               </table>
@@ -97,7 +101,9 @@
                 <% if todo_list.complete_switch == false %>
 
                   <tr class="completed_list">
-                    <td class="todo_date"><%= todo_list.start_date.strftime("%m/%d") %></td>
+                    <td class="todo_date">
+                      <%= todo_list.start_date.strftime("%m/%d") %>
+                    </td>
                     <td><%= todo_list.name %></td>
                     <td>
                       <%= form_with model: todo_list, url: todo_list_path(todo_list.id), method: :patch do |f| %>
