@@ -5,7 +5,7 @@ class Stock < ApplicationRecord
   # 今後増加したときのために数字の間隔を空けています
 
   def start_time # シンプルカレンダー用の定義
-    self.alert_date.to_time.to_datetime
+    self.alert_date.to_date
   end
 
   def add_stock(stock_amount,purchase_date,category,alert_setting) #既存のｽﾄｯｸの情報を更新する
