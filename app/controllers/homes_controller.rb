@@ -5,7 +5,7 @@ class HomesController < ApplicationController
   def index
     user = current_user
     @todo_lists = user.todo_lists.all
-    @stocks = user.stocks.where(alert_switch: "true")
+    @stocks = user.stocks.where(alert_switch: true)
     shopping_lists = user.shopping_lists.all
     # 以下カレンダー用
     @events = @todo_lists | @stocks
@@ -17,6 +17,6 @@ class HomesController < ApplicationController
       end
     @shopping_list = ShoppingList.new #Addボタン用
     # 以下alert用
-    @stock_alert = user.stocks.where(alert_switch: "true").where("alert_date <= ?", DateTime.current)
+    @stock_alert = user.stocks.where(alert_switch: true).where("alert_date <= ?", DateTime.current)
   end
 end
