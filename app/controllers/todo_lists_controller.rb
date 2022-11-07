@@ -1,7 +1,6 @@
 class TodoListsController < ApplicationController
 
   def create
-    @shopping_lists = current_user.shopping_lists.page(params[:page]).per(10)
     @todo_lists = current_user.todo_lists.order(:start_date).page(params[:page]).per(10)
 
     @todo_list = TodoList.new(todo_list_params)
@@ -34,8 +33,8 @@ class TodoListsController < ApplicationController
   end
 
   private
-    def todo_list_params
-      params.require(:todo_list).permit(:name, :start_date, :complete_switch, :repeat_days)
-    end
+  def todo_list_params
+    params.require(:todo_list).permit(:name, :start_date, :complete_switch, :repeat_days)
+  end
 
 end
