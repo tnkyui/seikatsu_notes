@@ -87,7 +87,7 @@
           </table>
           <div class="row">
             <div class="mx-auto">
-              <%= paginate @shopping_lists %>
+              <%= paginate @shopping_lists, :param_name => 'shopping_page' %>
             </div>
           </div>
         </div>
@@ -144,7 +144,7 @@
           </table>
           <div class="row">
             <div class="mx-auto">
-              <%= paginate @todo_lists %>
+              <%= paginate @todo_lists, :param_name => 'todo_page' %>
             </div>
           </div>
         </div>
