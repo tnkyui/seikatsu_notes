@@ -7,7 +7,7 @@ class TodoListsController < ApplicationController
     @todo_list = TodoList.new(todo_list_params)
     @todo_list.user_id = current_user.id
     if @todo_list.save
-      redirect_to request.referer, notice: "リストを更新しました"
+      redirect_to request.referer, notice: "リストに登録しました"
     else
       redirect_to request.referer, alert: "入力内容に不備があります"
     end

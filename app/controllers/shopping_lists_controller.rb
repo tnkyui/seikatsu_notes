@@ -7,7 +7,7 @@ class ShoppingListsController < ApplicationController
     @shopping_list = ShoppingList.new(shopping_list_params)
     @shopping_list.user_id = current_user.id
     if @shopping_list.save
-      redirect_to lists_path, notice: "リストを更新しました"
+      redirect_to lists_path, notice: "リストに登録しました"
     else
       redirect_to lists_path, alert: "入力内容に不備があります"
     end

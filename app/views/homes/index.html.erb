@@ -52,7 +52,7 @@
                   <%= stock.name %>
                 </td>
                 <td class="small">
-                  <span class="red-text"><%= (Date.current - stock.purchase_date).to_i %></span>日経過
+                  <span class="red-text"><%= (Date.current - stock.purchase_date).to_i %></span>日前
                 </td>
                 <td class="text-right">
                   <%= form_with model: @stock_alert, url: stock_path(stock.id), method: :patch do |f| %>
@@ -95,7 +95,7 @@
             <% end %>
 
           <% else %>
-            <button class="event-schedule-name completelist-name">
+            <button class="event-schedule-name completelist-name d-block">
               <i class="fa fa-check-circle-o" aria-hidden="true"></i><%= event.name %>
             </button>
           <% end %>

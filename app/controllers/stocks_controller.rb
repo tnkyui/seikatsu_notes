@@ -59,7 +59,7 @@ class StocksController < ApplicationController
             in_list.destroy
             redirect_to stocks_path, notice: "在庫とリストを更新しました"
         elsif @stock.save && !in_list.present?
-            redirect_to stocks_path, notice: "在庫を更新しました"
+            redirect_to stocks_path, notice: "在庫を登録しました"
         else
           render :index
         end
@@ -69,7 +69,11 @@ class StocksController < ApplicationController
   def update
     stock = Stock.find(params[:id])
     stock.update(stock_params)
-    redirect_to stocks_path, notice: "在庫を更新しました"
+    if params[:stock][:hidden_switch] == "false"
+      redirect_to home_path, notice: "在庫を更新しました"
+    else
+      redirect_to stocks_path, notice: "在庫を更新しました"
+    end
   end
 
   def destroy

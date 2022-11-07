@@ -17,6 +17,6 @@ class HomesController < ApplicationController
       end
     @shopping_list = ShoppingList.new #Addボタン用
     # 以下alert用
-    @stock_alert = user.stocks.where(alert_switch: true).where("alert_date <= ?", Date.current)
+    @stock_alert = user.stocks.where(alert_switch: true).where("alert_date <= ?", DateTime.current)
   end
 end
